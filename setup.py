@@ -45,8 +45,7 @@ standard libary (``os.path.Path``).  Compare::
 Documentation is in the README and on the
 `website <http://sluggo.scrapping.cc/python/unipath/>`__.
 
-Unipath is in early alpha release so the API may change as it get
-greater use in the "real world".  Unipath comes with extensive
+Unipath comes with extensive
 unittests, and has been tested on Python 2.5 and 2.4.4 on Linux.
 Feedback and Windows/Macintosh testers are encouraged.
 """
