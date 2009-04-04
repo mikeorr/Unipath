@@ -1,7 +1,9 @@
-0.2.1
+tip
+
+0.2.1, released 2008-05-19 by MSO
  - Delete spurious references to deleted ``unipath.platform`` package.
 
-0.2.0
+0.2.0, released 2008-05-??
  - Rename Path to AbstractPath, and FSPath to Path.  FSPath remains as an
    alias for backward compatibility.
  - Allow integers in constructor.
