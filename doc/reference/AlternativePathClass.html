@@ -1,0 +1,639 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+
+<title>AlternativePathClass - PythonInfo Wiki</title>
+
+<script type="text/javascript">
+<!--// common functions
+
+// We keep here the state of the search box
+searchIsDisabled = false;
+
+function searchChange(e) {
+    // Update search buttons status according to search box content.
+    // Ignore empty or whitespace search term.
+    var value = e.value.replace(/\s+/, '');
+    if (value == '' || searchIsDisabled) { 
+        searchSetDisabled(true);
+    } else {
+        searchSetDisabled(false);
+    }
+}
+
+function searchSetDisabled(flag) {
+    // Enable or disable search
+    document.getElementById('fullsearch').disabled = flag;
+    document.getElementById('titlesearch').disabled = flag;
+}
+
+function searchFocus(e) {
+    // Update search input content on focus
+    if (e.value == 'Search') {
+        e.value = '';
+        e.style.color = 'black';
+        searchIsDisabled = false;
+    }
+}
+
+function searchBlur(e) {
+    // Update search input content on blur
+    if (e.value == '') {
+        e.value = 'Search';
+        e.style.color = 'gray';
+        searchIsDisabled = true;
+    }
+}
+
+function actionsMenuInit(title) {
+    // Initiliaze action menu
+    for (i = 0; i < document.forms.length; i++) {
+        var form = document.forms[i];
+        if (form.className == 'actionsmenu') {
+            // Check if this form needs update
+            var div = form.getElementsByTagName('div')[0];
+            var label = div.getElementsByTagName('label')[0];
+            if (label) {
+                // This is the first time: remove label and do buton.
+                div.removeChild(label);
+                var dobutton = div.getElementsByTagName('input')[0];
+                div.removeChild(dobutton);
+                // and add menu title
+                var select = div.getElementsByTagName('select')[0];
+                var item = document.createElement('option');
+                item.appendChild(document.createTextNode(title));
+                item.value = 'show';
+                select.insertBefore(item, select.options[0]);
+                select.selectedIndex = 0;
+            }
+        }
+    }
+}
+//-->
+</script>
+
+<!--style-start -->
+  <style type="text/css" media="screen">@import "http://www.python.org/styles/styles.css";</style>
+  <link rel="stylesheet" type="text/css" media="sc&#82;een" href="http://www.python.org/styles/netscape4.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="http://www.python.org/styles/print.css" />
+  <link rel="alternate stylesheet" type="text/css" media="screen" href="http://www.python.org/styles/largestyles.css" title="large text" />
+  
+
+<link rel="Start" href="/moin/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="/moin/AlternativePathClass?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="/moin/AlternativePathClass?action=print">
+<link rel="Search" href="/moin/FindPage">
+<link rel="Index" href="/moin/TitleIndex">
+<link rel="Glossary" href="/moin/WordIndex">
+<link rel="Help" href="/moin/HelpOnFormatting">
+</head>
+<body  lang="en" dir="ltr">
+
+  <!-- Logo -->
+  <h1 id="logoheader">
+    <a href="http://www.python.org" id="logolink" accesskey="1"><img id="logo" src="http://www.python.org/images/python-logo.gif" alt="homepage" border="0" /></a>
+  </h1>
+  <!-- Skip to Navigation -->
+  <div class="skiptonav"><a href="#navigation" accesskey="2"><img src="http://www.python.org/images/trans.gif" id="skiptonav" alt="skip to navigation" border="0" /></a></div>
+  <div class="skiptonav"><a href="#content" accesskey="3"><img src="http://www.python.org/images/trans.gif" id="skiptocontent" alt="skip to content" border="0" /></a></div>
+  <!-- Utility Menu -->
+  <div id="utility-menu"></div>
+  <!-- Search Box -->
+  <div id="searchbox">
+    <form action="http://google.com" id="searchform" name="searchform">
+      <div id="search">
+        <input type="text" class="input-text" name="text" />
+        <input type="button" value="search" class="input-button" name="search" />
+      </div>
+    </form>
+  </div>
+
+  <div id="content-body">
+    <div id="body-main">
+
+    <h1 class="pageheading">
+<h1 id="title"><a title="Click to do a full-text search for this title" href="/moin/AlternativePathClass?action=fullsearch&amp;value=linkto%3A%22AlternativePathClass%22&amp;context=180">AlternativePathClass</a></h1>
+</h1>
+<ul id="iconbar">
+<li><a title="Edit" href="/moin/AlternativePathClass?action=edit"><img src="/wiki/beta/img/moin-edit.png" alt="Edit" height="12" width="12"></a></li>
+<li><a title="View" href="/moin/AlternativePathClass"><img src="/wiki/beta/img/moin-show.png" alt="View" height="13" width="12"></a></li>
+<li><a title="Diffs" href="/moin/AlternativePathClass?action=diff"><img src="/wiki/beta/img/moin-diff.png" alt="Diffs" height="11" width="15"></a></li>
+<li><a title="Info" href="/moin/AlternativePathClass?action=info"><img src="/wiki/beta/img/moin-info.png" alt="Info" height="11" width="12"></a></li>
+<li><a title="Subscribe" href="/moin/AlternativePathClass?action=subscribe"><img src="/wiki/beta/img/moin-subscribe.png" alt="Subscribe" height="10" width="14"></a></li>
+<li><a title="Raw" href="/moin/AlternativePathClass?action=raw"><img src="/wiki/beta/img/moin-raw.png" alt="Raw" height="13" width="12"></a></li>
+<li><a title="Print" href="/moin/AlternativePathClass?action=print"><img src="/wiki/beta/img/moin-print.png" alt="Print" height="14" width="16"></a></li>
+</ul>
+
+
+<form id="searchform" method="get" action="">
+<div>
+<input type="hidden" name="action" value="fullsearch">
+<input type="hidden" name="context" value="180">
+<label for="searchinput">Search:</label>
+<input id="searchinput" type="text" name="value" value="" size="20"
+    onfocus="searchFocus(this)" onblur="searchBlur(this)"
+    onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search">
+<input id="titlesearch" name="titlesearch" type="submit"
+    value="Titles" alt="Search Titles">
+<input id="fullsearch" name="fullsearch" type="submit"
+    value="Text" alt="Search Full Text">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+
+<div lang="en" id="content" dir="ltr">
+<a id="top"></a>
+<p>This page describes directory-based path classes, an alternative to <a class="external" href="http://www.python.org/dev/peps/pep-0355/"><img src="/wiki/beta/img/moin-www.png" alt="[WWW]" height="11" width="11"> PEP 355</a> which is string-based.   </p>
+<p><em><strong>Please keep the proposals internally consistent and according to the author's intentions.</em></strong>  You can state objections in the Comment section under each proposal, or in the general topic sections below the proposals. </p>
+<hr>
+<p> </p>
+
+<h2 id="head-00a5ef91bd64de35f00a4203989a66d5290bbfe7">Proposal #1 (Noam Raphael)</h2>
+
+<p>The source can be found in <a href="/moin/AlternativePathModule">AlternativePathModule</a>. </p>
+
+<h3 id="head-680a0b8afbd02f25a72652921e61425405b6195d">Introduction</h3>
+
+<p>Hello, </p>
+<p>I saw the discussion about including the <a href="/moin/PathClass">path type</a> in the standard library. As it turned out, I recently wrote a program which does quite a lot of path manipulation. This caused me to think that the proposed path module: </p>
+<ul>
+<li><p> Makes path manipulation significantly easier </p>
+</li>
+<li><p> Can be improved. </p>
+</li>
+</ul>
+<p>So I tried to write my version of it. You can download it from the page <a href="/moin/AlternativePathModule">AlternativePathModule</a>, and say what you think about it. </p>
+<p>My basic problem with the current proposed path module is that it's a bit... messy. It contains a lot of methods, collected from various modules, and for me it looks too crowded - there are too many methods and too many details for me to easily learn. </p>
+<p>So I tried to organize it all. The following section describes the changes. I think that the result may make file and path manipulation really easier. All these are ideas - I would like to hear what you think about them. </p>
+
+<h3 id="head-4c17a0d44fd1e96c6e21956d09e59189d82feae4">Major Changes</h3>
+
+
+<h4 id="head-4493c6e62c1b43ae1ccdfd03b1344ff112c4d288">a tuple instead of a string</h4>
+
+<p>The biggest conceptual change is that my path object is a subclass of <em>tuple</em> rather than <em>str</em>. For example, 
+</p>
+<pre>
+&gt;&gt;&gt; tuple(path('a/b/c'))
+('a', 'b', 'c')
+&gt;&gt;&gt; tuple(path('/a/b/c'))
+(path.ROOT, 'a', 'b', 'c')
+</pre>
+<p>This means that path objects aren't the string representation of a path; they are a <em>logical</em> representation of a path. Remember why a filesystem path is called a path - because it's a way to get from one place on the filesystem to another. Paths can be relative, which means that they don't define from where to start the walk, and can be not relative, which means that they do. In the tuple representation, relative paths are simply tuples of strings, and not relative paths are tuples of strings with a first "root" element. </p>
+<p>The advantage of using a logical representation is that you can forget about the textual one, which can be really complex. You don't have to call normpath when you're unsure about how a path looks, you don't have to search for seps and altseps, and... you don't need to remember a lot of names of functions or methods. To show that, take a look at those methods from the original path class and their equivalent in my path class: </p>
+
+<pre>
+p.normpath()  -&gt; Isn't needed - done by the constructor
+p.basename()  -&gt; p[-1]
+p.splitpath() -&gt; (p[:-1], p[-1])
+p.splitunc()  -&gt; (p[0], p[1:]) (if isinstance(p[0], path.UNCRoot))
+p.splitall()  -&gt; Isn't needed
+p.parent      -&gt; p[:-1]
+p.name        -&gt; p[-1]
+p.drive       -&gt; p[0] (if isinstance(p[0], path.Drive))
+p.uncshare    -&gt; p[0] (if isinstance(p[0], path.UNCRoot))
+
+and of course:
+p.join(q) [or anything like it] -&gt; p + q
+</pre>
+<p>The only drawback I can see in using a logical representation is that giving a path object to functions which expect a path string won't work. The immediate solution is to simply use str(p) instead of p. The long-term solution is to make all related functions accept a path object. </p>
+<p>Having a logical representation of a path calls for a bit of term clearing-up. What's an absolute path? On POSIX, it's very simple: a path starting with a '/'. But what about Windows? Is "\temp\file" an absolute path? I claim that it isn't really. The reason is that if you change the current working directory, its meaning changes: It's now not "c:\temp\file", but "a:\temp\file". The same goes for "c:temp\file". So I decided on these two definitions: </p>
+<ul>
+<li><p> A <em>relative path</em> is a path without a root element, so it can be concatenated to other paths. </p>
+</li>
+<li><p> An <em>absolute path</em> is a path whose meaning doesn't change when the current working directory changes. </p>
+</li>
+</ul>
+<p>This means that paths starting with a drive letter alone (UnrootedDrive instance, in my module) and paths starting with a backslash alone (the CURROOT object, in my module) are not relative and not absolute. </p>
+<p>I really think that it's a better way to handle paths. If you want an example, compare the current implementation of relpathto and my implementation. </p>
+
+<h4 id="head-a8094c67caf8888838e9d980208206f6eb57082f">Easier attributes for stat objects</h4>
+
+<p>The current path objects includes: </p>
+<ul>
+<li><p> isdir, isfile, islink, and - </p>
+</li>
+<li><p> atime, mtime, ctime, size. </p>
+</li>
+</ul>
+<p>The first line does file mode checking, and the second simply gives attributes from the stat object. </p>
+<p>I suggest that these should be added to the stat_result object. isdir, isfile and islink are true if a specific bit in st_mode is set, and atime, mtime, ctime and size are simply other names for st_atime, st_mtime, st_ctime and st_size. </p>
+<p>It means that instead of using the atime, mtime etc. methods, you will write <tt>&nbsp;p.stat().atime&nbsp;</tt>, <tt>&nbsp;p.stat().size&nbsp;</tt>, etc. </p>
+<p>This is good, because: </p>
+<ul>
+<li><p> If you want to make only one system call, it's very easy to save the stat object and use it. </p>
+</li>
+<li><p> If you have to deal with symbolic links, you can simply use <tt>&nbsp;p.lstat().mtime&nbsp;</tt>. Yes, symbolic links have a modification time. The alternative is to add three methods with ugly names (latime, lmtime, lctime) or to have an incomplete interface without a good reason. </p>
+</li>
+</ul>
+<p>I think that isfile, isdir should be kept (along with lisfile, lisdir), since I think that doing what they do is quite common, and requires six lines: 
+</p>
+<pre>
+try:
+    st = p.stat()
+except OSError:
+    return False
+else:
+    return st.isdir
+</pre>
+<p>I think that still, isdir, isfile and islink should be added to stat_result objects: They turned out pretty useful in writing some of the more complex path methods. </p>
+
+<h4 id="head-edd4a5f64b90371deeac2fa0d494c4bfc286b018">One Method for Finding Files</h4>
+
+<p>(They're actually two, but with exactly the same interface). The original path object has these methods for finding files: </p>
+
+<pre>
+def listdir(self, pattern = None): ...
+def dirs(self, pattern = None): ...
+def files(self, pattern = None): ...
+def walk(self, pattern = None): ...
+def walkdirs(self, pattern = None): ...
+def walkfiles(self, pattern = None): ...
+def glob(self, pattern):
+</pre>
+<p>I suggest one method that replaces all those: 
+</p>
+<pre>
+def glob(self, pattern='*', topdown=True, onlydirs=False, onlyfiles=False): ...
+</pre>
+<p>pattern is the good old glob pattern, with one additional extension: "**" matches any number of subdirectories, including 0. This means that '**' means "all the files in a directory", '**/a' means "all the files in a directory called a", and '**/a*/**/b*' means "all the files in a directory whose name starts with 'b' and the name of one of their parent directories starts with 'a'". </p>
+<p>onlydirs and onlyfiles filter the results (they can't be combined, of course). topdown has the same meaning as in os.walk (it isn't supported by the original path class). So, let's show how these methods can be replaced: </p>
+
+<pre>
+p.listdir()   -&gt; p.glob()
+p.dirs()      -&gt; p.glob(onlydirs=1)
+p.files()     -&gt; p.glob(onlyfiles=1)
+p.walk()      -&gt; p.glob('**')
+p.walkdirs()  -&gt; p.glob('**', onlydirs=1)
+p.walkfiles() -&gt; p.glob('**', onlyfiles=1)
+p.glob(patt)  -&gt; p.glob(patt)
+</pre>
+<p>Now, for the promised additional method. The current implementation of glob doesn't follow symbolic links. In my implementation, there's "lglob", which does what the current glob does. However, the (default) glob does follow symbolic links. To avoid infinite recursion, it keeps the set of filesystem ids on the current path, and checks each dir to see if it was already encountered. (It does so only if there's '**' in the pattern, because otherwise a finite number of results is guaranteed.) Note that it doesn't keep the ids of all the files traversed, only those on the path from the base node to the current node. This means that as long as there're no cycles, everything will go fine - for example, 'a' and 'b' pointing at the same dir will just cause the same files to be reported twice, once under 'a' and once under 'b'. One last note: On windows there are no file ids, but there are no symbolic links, so everything is fine. </p>
+<p>Oh, and it returns an iterator, not a list. </p>
+
+<h4 id="head-86994c0622d4aa18ca5b703e4a0fa354a309b0f2">Separation of Calculations and System Calls</h4>
+
+<p>I like to know when I'm using system calls and when I don't. It turns out that using tuples instead of strings makes it possible to define all operations which do not use system calls as properties or operators, and all operations which do use system calls as methods. </p>
+<p>The only exception currently is .match(). What can I do? </p>
+
+<h4 id="head-08b320498da6ac021b837edace34ef0440193005">Reduce the Number of Methods</h4>
+
+<p>I think that the number of methods should be reduced. The most obvious example are the copy functions. In the current proposal: </p>
+
+<pre>
+def copyfile(self, dst): ...
+def copymode(self, dst): ...
+def copystat(self, dst): ...
+def copy(self, dst): ...
+def copy2(self, dst): ...
+</pre>
+<p>In my proposal: </p>
+
+<pre>
+def copy(self, dst, copystat=False): ...
+</pre>
+<p>It's just that I think that copyfile, copymode and copystat aren't usually useful, and there's no reason not to unite copy and copy2. </p>
+
+<h3 id="head-8a694453c56f413dd196122d0663219832ac343a">Other Changes</h3>
+
+<p>Here is a list of the smaller things I've changed in my proposal. </p>
+<p>The current normpath removes '..' with the name before them. I didn't do that, because it doesn't return an equivalent path if the path before the '..' is a symbolic link. </p>
+<p>I removed the methods associated with file extensions. I don't recall using them, and since they're purely textual and not OS-dependent, I think that you can always do p[-1].rsplit('.', 1). </p>
+<p>I removed renames. Why not use makedirs, rename, removedirs? </p>
+<p>I removed unlink. It's an alias to remove, as far as I know. </p>
+<p>I removed expand. There's no need to use normpath, so it's equivalent to .expanduser().expandvars(), and I think that the explicit form is better. </p>
+<p>removedirs - I added another argument, basedir, which won't be removed even if it's empty. I also allowed the first directory to be unempty (I required that it should be a directory). This version is useful for me. </p>
+<p>readlinkabs - The current path class returns abspath(readlink). This is meaningless - symbolic links are interpreted relative to the directory they are in, not relative the the current working directory of the program. Instead, I wrote readlinkpath, which returns the correct path object. However, I'm not sure if it's needed - why not use realpath()? </p>
+<p>copytree - I removed it. In shutil it's documented as being mostly a demonstration, and I'm not sure if it's really useful. </p>
+<p>symlink - Instead of a function like copy, with the destination as the second (actually, the only) argument, I wrote "writelink", which gets a string and creates a symbolic link with that value. The reason is that symbolic links can be any string, not necessarily a legal path. </p>
+<p>I added mknod and mkfifo, which from some reason weren't there. </p>
+<p>I added chdir, which I don't see why shouldn't be defined. </p>
+<p>relpathto - I used realpath() instead of abspath(). abspath() may be incorrect if some of the dirs are symlinks. </p>
+<p>I removed relpath. It doesn't seem useful to me, and I think that writing path.cwd().relpathto(p) is easy enough. </p>
+<p>join - I decided that p+q should only work if q is a relative path. In my first implementation, it returned q, which is consistent with the current os.path.join(). However, I think that in the spirit of "explicit is better than implicit", a code like 
+</p>
+<pre>
+if q.isrel:
+    return p + q
+else:
+    return q
+</pre>
+<p>is pretty easy and pretty clear. I think that many times you want q to be relative, so an exception if it isn't would be helpful. I also think that it's nice that <tt>&nbsp;len(p+q)&nbsp;==&nbsp;len(p)&nbsp;+&nbsp;len(q)&nbsp;</tt>. </p>
+<p>match - The current implementation matches the base name of the path against a pattern. My implementation matches a relative path against a pattern, which is also a relative path (it's of the same form as the pattern of glob - may include '**') </p>
+<p>matchcase - I removed it. If you see a reason for keeping it, tell me. </p>
+
+<h3 id="head-bbb622c53c34abc1988fada7760fb8ce0b3e6320">Comparison to the Current Path Class</h3>
+
+<p>Here's a comparison of doing things using the current path class and doing things using my proposed path class. </p>
+
+<pre>
+# Operations on path strings:
+p.cwd()        -&gt; p.cwd()
+p.abspath()    -&gt; p.abspath()
+p.normcase()   -&gt; p.normcase
+Also added p.normcasestr, to normalize path elements.
+p.normpath()   -&gt; Unneeded
+p.realpath()   -&gt; p.realpath()
+p.expanduser() -&gt; p.expanduser()
+p.expandvars() -&gt; p.expandvars()
+p.basename()   -&gt; p[-1]
+p.expand()     -&gt; p.expanduser().expandvars()
+p.splitpath()  -&gt; Unneeded
+p.stripext()   -&gt; p[-1].rsplit('.', 1)[0]
+p.splitunc()   -&gt; Unneeded
+p.splitall()   -&gt; Unneeded
+p.relpath()    -&gt; path.cwd().relpathto(p)
+p.relpathto(dst) -&gt; p.relpathto(dst)
+
+# Properties about the path:
+p.parent       -&gt; p[:-1]
+p.name         -&gt; p[-1]
+p.ext          -&gt; ''.join(p[-1].rsplit('.', 1)[1:])
+p.drive        -&gt; p[0] if p and isinstance(p[0], path.Drive) else None
+p.namebase     -&gt; p[-1].rsplit('.', 1)[0]
+p.uncshare     -&gt; p[0] if p and isinstance(p[0], path.UNCRoot) else None
+
+# Operations that return lists of paths:
+p.listdir()    -&gt; p.glob()
+p.listdir(patt)-&gt; p.glob(patt)
+p.dirs()       -&gt; p.glob(onlydirs=1)
+p.dirs(patt)   -&gt; p.glob(patt, onlydirs=1)
+p.files()      -&gt; p.glob(onlyfiles=1)
+p.files(patt)  -&gt; p.glob(patt, onlyfiles=1)
+p.walk()       -&gt; p.glob('**')
+p.walk(patt)   -&gt; p.glob('**/patt')
+p.walkdirs()   -&gt; p.glob('**', onlydirs=1)
+p.walkdirs(patt) -&gt; p.glob('**/patt', onlydirs=1)
+p.walkfiles()  -&gt; p.glob('**', onlyfiles=1)
+p.walkfiles(patt) -&gt; p.glob('**/patt', onlyfiles=1)
+p.match(patt)  -&gt; p[-1:].match(patt)
+(The current match matches the base name. My matches a relative path)
+p.matchcase(patt) -&gt; Removed
+p.glob(patt)   -&gt; p.glob(patt)
+
+# Methods for retrieving information about the filesystem
+# path:
+p.exists()     -&gt; p.exists()
+Added p.lexists()
+p.isabs()      -&gt; not p.isrel
+(That's the meaning of the current isabs().)
+Added p.isabs
+p.isdir()      -&gt; p.isdir()
+Added p.lisdir()
+p.isfile()     -&gt; p.isfile()
+Added p.lisfile()
+p.islink()     -&gt; p.islink()
+p.ismount()    -&gt; p.ismount()
+p.samefile(other) -&gt; p.samefile(other)
+p.getatime()   -&gt; p.stat().atime
+p.getmtime()   -&gt; p.stat().mtime
+p.getctime()   -&gt; p.stat().ctime
+p.getsize()    -&gt; p.stat().size
+p.access(mode) -&gt; p.access(mode)
+p.stat()       -&gt; p.stat()
+p.lstat()      -&gt; p.lstat()
+p.statvfs()    -&gt; p.statvfs()
+p.pathconf(name) -&gt; p.pathconf(name)
+
+# Filesystem properties for path.
+atime, mtime, ctime, size - Removed
+
+# Methods for manipulating information about the filesystem
+# path.
+utime, chmod, chown, rename - unchanged
+p.renames(new)   -&gt; new[:-1].makedirs(); p.rename(new); p[:-1].removedirs()
+
+# Create/delete operations on directories
+mkdir, makedirs, rmdir, removedirs - unchanged (added an option to removedirs)
+
+# Modifying operations on files
+touch, remove - unchanged
+unlink - removed
+
+# Modifying operations on links
+p.link(newpath)   -&gt; p.link(newpath)
+p.symlink(newlink) -&gt; newlink.writelink(p)
+p.readlink()      -&gt; p.readlink()
+p.readlinkabs()   -&gt; p.readlinkpath()
+
+# High-level functions from shutil
+copyfile, copymode, copystat, copytree - removed
+p.copy(dst)   -&gt; p.copy(dst)
+p.copy2(dst)  -&gt; p.copt(dst, copystat=1)
+move, rmtree - unchanged.
+
+# Special stuff from os
+chroot, startfile - unchanged.
+
+</pre>
+
+<h3 id="head-56f4f3adb145c4a7cdfaa49f7d3aa7946f565a19">Open Issues</h3>
+
+<p>Unicode - I have no idea about unicode paths. My current implementation simply uses str. This should be changed, I guess. </p>
+<p>Slash-terminated paths - In my current implementation, paths ending with a slash are normalized to paths without a slash (this is also the behaviour of os.path.normpath). However, they aren't really the same: stat() on paths ending with a slash fails if they aren't directories, and lstat() treats them as directories even if they are symlinks. Perhaps a final empty string should be allowed. </p>
+
+<h3 id="head-9baabd7d5c5231fb6a55fc06071986487983414c">Comments on proposal #1</h3>
+
+<p>Please write here comments. Thanks! </p>
+<hr>
+<p> </p>
+
+<h2 id="head-f1dae7f55fda08c39957796c5f494c63eddeb443">Proposal #2 (Mike Orr)</h2>
+
+<p>Two classes in os.path: <a class="nonexistent" href="/moin/FilePath">FilePath</a>, <a class="nonexistent" href="/moin/DirectoryPath">DirectoryPath</a>.  These are defined in posixpath, ntpath, etc.  Inheritance graph: </p>
+<ul>
+<li style="list-style-type:none"><p>posixpath.<a class="nonexistent" href="/moin/FilePath">FilePath</a> -&gt; basepath.<a class="nonexistent" href="/moin/FilePath">FilePath</a> -&gt; basepath.Path -&gt; object </p>
+<p>posixpath.<a class="nonexistent" href="/moin/DirectoryPath">DirectoryPath</a> -&gt; basepath.<a class="nonexistent" href="/moin/DirectoryPath">DirectoryPath</a> -&gt; basepath.<a class="nonexistent" href="/moin/BasePath">BasePath</a> -&gt; object </p>
+</li>
+</ul>
+<p>Both describe a path via their attributes, including a tuple of directory components.  For <a class="nonexistent" href="/moin/DirectoryPath">DirectoryPath</a>, all components are directories.  For <a class="nonexistent" href="/moin/FilePath">FilePath</a>, the final component is a non-directory.   The filesystem object described by the path may or may not exist.  If a method is called that depends on an existing directory but a file is found instead, or vice versa, raise <a class="nonexistent" href="/moin/DirectoryError">DirectoryError</a> (subclass of <a class="nonexistent" href="/moin/PathError">PathError</a>). </p>
+<p>Paths are immutable and may be used as dictionary keys.  .<span class="u">str</span>() returns the string equivalent.  The open() builtin should accept Path objects.  Paths use unicode internally. </p>
+<p>XXX TODO: Split the combined Path below and Noam's class above into <a class="nonexistent" href="/moin/FilePath">FilePath</a> and <a class="nonexistent" href="/moin/DirectoryPath">DirectoryPath</a>. </p>
+
+<pre>
+class Path(object):     
+
+Class attributes:
+    sep
+    extsep
+    curdir
+    pardir
+
+Constructors:
+    Path(s)           # Create Path from string/unicode.
+    Path(s, encoding="latin1", errors="strict")
+                      # Same but use non-default encoding.
+    Path()            # Same as Path(Path.curdir)
+    Path.cwd()        # Same as Path(os.getcwd())
+    Path.cwd("c:")    # Get current directory for specified drive.
+
+Instance attributes:  (immutable, set by constructor)
+    root      # "" for relative, "/" for Unix absolute, r"C:\" for
+              # Windows absolute, r"C:" for Windows relative,
+              # r"\\HOST" for Windows UNC share, "http://host/" for
+              # URL.  Actual value may differ from this spec.
+
+    path      # Tuple of directory components.  The last may be a
+              # non-directory.
+    name      # Same as path[-1] without extension.
+    ext       # Extension without separator; "" if none.
+    isabsolute    # Is .root absolute?
+
+Methods:  same as proposal #1 except...
+    p + SEQUENCE  # Similar to os.path.join().  (String incompatible!)
+
+    Replace method .glob with:
+    listdir(pattern=None, names_only=False)
+                  # List of paths in directory matching 'pattern'.
+                  # If 'names_only' is true, same as os.listdir(self).
+    files(pattern=None, symlinks=True)
+                  # Same but return only regular files.  If 
+                  # 'symlinks' is false, do not follow symbolic links.
+    dirs(pattern=None, symlinks=True)
+                  # Same but return only directories.
+    symlinks(pattern=None)
+                  # Return only symbolic links.
+    # To find other device files, use .listdir().
+    walk(pattern=None, symlinks=True, topdown=True, onerror=None)
+                  # Recursively yield paths.  XXX What does onerror
+                  # do?
+    walkfiles(pattern=None, symlinks=True, onerror=None)
+    walkdirs(pattern=None, symlinks=True, onerror=None)
+    walklinks(pattern=None, onerror=None)
+
+    copy(dst, content=True, mode=True, time=False)
+
+    mkdir() and rmdir() succeed if the operation is already done.
+
+    purge()       # Delete file or directory recursively if exists.
+
+    symlink_to(s)  # Make self a symbolic link to s (Path or string).
+                   # Drop method .writelink().
+
+    symlink(p, absolute)     # Make path p a symbolic link to self.
+                   # 'absolute' is boolean.  Difficult to determine
+                   # number of ".." for relative?
+
+    expand()       # Same as .expanduser().expandvars().
+
+   
+</pre>
+<p><a class="nonexistent" href="/moin/MutablePath">MutablePath</a> is a subclass that's mutable, so it cannot be used as a dictionary key.  The .path attribute is a list. </p>
+
+<h3 id="head-a85ea7ecf39f6111ac5d3661cd081fc5806a29ca">Open issues</h3>
+
+<p>Should *Path subclass str or unicode?  Advantages: drop-in replacement for string paths.  Disadvantages: str/unicode dichotomy, can't use p<a href="/moin/-N">-N</a> to return a derived path with N directories dropped. </p>
+<p>Rename <a class="nonexistent" href="/moin/FilePath">FilePath</a> to Path, and Path to <a class="nonexistent" href="/moin/BasePath">BasePath</a>? </p>
+<p>Should .isdir() etc be Path methods or should one do p.stat().isdir?  </p>
+<p>Consider using .delete() instead of .remove() or .unlink(). </p>
+<p>Should Path and <a class="nonexistent" href="/moin/MutablePath">MutablePath</a> be called <a class="nonexistent" href="/moin/FrozenPath">FrozenPath</a> and Path?  Or frozenpath and path? </p>
+
+<h3 id="head-0a9a39d405ca75a1818bbe7c0a765f84920552f0">Comments on proposal #2</h3>
+
+<p>None yet. </p>
+<hr>
+<p> </p>
+
+<h2 id="head-8b38d900471aaf3c981e5175b578d92ca986a2ed">Summary of Python-dev discussion</h2>
+
+<p>Threads: </p>
+<ul>
+<li><p> <a href="http://mail.python.org/pipermail/python-dev/2006-April/063977.html"><img src="/wiki/beta/img/moin-www.png" alt="[WWW]" height="11" width="11"> http://mail.python.org/pipermail/python-dev/2006-April/063977.html</a> </p>
+</li>
+<li><p> <a href="http://mail.python.org/pipermail/python-dev/2006-May/064745.html"><img src="/wiki/beta/img/moin-www.png" alt="[WWW]" height="11" width="11"> http://mail.python.org/pipermail/python-dev/2006-May/064745.html</a> </p>
+</li>
+<li><p> <a href="http://mail.python.org/pipermail/python-dev/2006-May/064749.html"><img src="/wiki/beta/img/moin-www.png" alt="[WWW]" height="11" width="11"> http://mail.python.org/pipermail/python-dev/2006-May/064749.html</a> </p>
+</li>
+<li><p> <a href="http://mail.python.org/pipermail/python-dev/2006-May/064802.html"><img src="/wiki/beta/img/moin-www.png" alt="[WWW]" height="11" width="11"> http://mail.python.org/pipermail/python-dev/2006-May/064802.html</a> (proposal #1) </p>
+</li>
+</ul>
+<p>There is general agreement for a new PEP containing one of these proposals. </p>
+<p>Guido is not convinced that PEP 355 or these proposals are necessarily better than the existing os.path module.  He's not following this discussion but will answer short (&lt;= 20-line) requests for pronouncements cc'd to both him and python-dev.   </p>
+<p>Inclusion in Python 2.6 is possible if we agree on an implementation in several months and release it in the Cheeseshop. </p>
+<p>Nick Coghlan suggests paired walk methods: </p>
+
+<pre>
+   # Do path.walk over this directory, and also return the corresponding
+  # information for a destination directory (so the dest dir information
+  # probably *won't* match that file system
+  for src_info, dest_info in src_path.pairedwalk(dest_path):
+      src_dirpath, src_subdirs, src_files = src_info
+      dest_dirpath, dest_subdirs, dest_files = dest_info
+      # Do something useful
+
+  # Ditto for path.walkdirs
+  for src_dirpath, dest_dirpath in src_path.pairedwalkdirs(dest_path):
+      # Do something useful
+
+  # Ditto for path.walkfiles
+  for src_path, dest_path in src_path.pairedwalkfiles(dest_path):
+      src_path.copy_to(dest_path)
+</pre>
+<p>What should happen to the os.path functions and other redundancies? </p>
+<ul>
+<li><p> Leave them alone because they work and existing programs depend on them. </p>
+</li>
+<li><p> Discourage their use in the documentation but continue to support them. </p>
+</li>
+<li><p> Rewrite them to use their Path counterparts.  This is a lot of useless work if we... </p>
+</li>
+<li><p> Remove them in Python 3.0. </p>
+</li>
+</ul>
+<p>Greg Ewing suggested splitting the filename on .extsep.  Nick Coghlan and Mike Orr pointed out that extensions are merely conventions on some OSes, and the user has to tell us which apparent extensions to consider as extensions.  How many extensions does "foo.2006-02-12.tar.gz" have?  "foo.2006.02.12.tar.gz"?  And directories normally do *not* have extensions ("cron.daily", "modules.autoload.d"). </p>
+<a id="bottom"></a>
+
+</div>
+
+<p><a href="/moin/AlternativePathClass?action=edit">EditText</a> (last edited 2006-05-06 17:24:10 by <span title="sense-sea-MegaSub-1-127.oz.net">MikeOrr</span>)</p>
+<a href="/moin/AlternativePathClass?action=refresh">DeleteCache</a> (cached 2006-10-05 11:18:24)
+<!-- END: Document Content -->
+    </div>
+  </div>
+
+
+  <!-- Left Hand Navigation Block -->
+  <div id="left-hand-navigation">
+    <!-- Main Menu -->
+    <div id="menu">
+      <ul class="level-one">
+        <li><a href="/moin/UserPreferences">Login</a></li>
+	<li> Navigation
+          <ul class="level-two">
+	    <li> <a href="/moin/FrontPage">Front Page</a></li>
+	    <li> <a href="/moin/TitleIndex">Title Index</a></li>
+	    <li> <a href="/moin/RecentChanges">Recent Changes</a></li>
+	    <li> <a href="/moin/FindPage">Find Page</a></li>
+	    <li> <a href="/moin/HelpContents">Help</a></li>
+	    <li> <a href="/moin/SiteNavigation">Site Navigation</a></li>
+          </ul>
+        <li> Actions
+          <ul class="level-two">
+	    <li><a href="/moin/AlternativePathClass?action=AttachFile">Attachments</a></li><li><a href="/moin/AlternativePathClass?action=LikePages">Like Pages</a></li><li><a href="/moin/AlternativePathClass?action=LocalSiteMap">Local Site Map</a></li><li><a href="/moin/AlternativePathClass?action=SpellCheck">Spell Check</a></li>
+          </ul>
+        </li>
+	<li> Your recent pages
+	  <ul class="level-two">
+	    
+          </ul></li>
+      </ul>
+    </div>
+  </div>
+<!-- end of page -->
+</body>
+</html>	
+</body>
+</html>
+

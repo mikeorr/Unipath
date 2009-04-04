@@ -1,0 +1,21 @@
+0.2.1
+ - Delete spurious references to deleted ``unipath.platform`` package.
+
+0.2.0
+ - Rename Path to AbstractPath, and FSPath to Path.  FSPath remains as an
+   alias for backward compatibility.
+ - Allow integers in constructor.
+ - Path.mkdir() checks whether the directory exists first.
+ - Test suite now uses nose instead of unittest.
+ - "+" operator returns concatenated path rather than string.
+ - Bugfix in Path.rel_path_to().
+ - Thanks to Roman <mereandor@gmail.com> for patches and suggestions.
+ - Delete Path.symlink(); use Path.write_link() instead -- note that the 
+   arg is the desination rather than the source!
+ - Path.make_relative_link_to() is a shortcut for
+   ``self.write_link(self.rel_path_to(dst))``.
+ - Delete the ``platform`` package.  See the tests if you need non-native
+   path syntax.`
+
+0.1.0, released 2007-01-28 by MSO
+  - Initial release.

@@ -1,0 +1,1 @@
+Methods inherited from unicode return strings rather than paths.

@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4.1: http://docutils.sourceforge.net/" />
+<title>UNIPATH</title>
+<meta name="author" content="Mike Orr &lt;sluggoster&#64;gmail.com&gt;" />
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="unipath">
+<h1 class="title">UNIPATH</h1>
+<h2 class="subtitle" id="an-object-oriented-approach-to-file-directory-operations">An object-oriented approach to file/directory operations</h2>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Version:</th>
+<td>0.2.0 (2008-05-17)</td></tr>
+<tr class="field"><th class="docinfo-name">Home page:</th><td class="field-body"><a class="reference" href="http://sluggo.scrapping.cc/python/unipath/">http://sluggo.scrapping.cc/python/unipath/</a></td>
+</tr>
+<tr><th class="docinfo-name">Author:</th>
+<td>Mike Orr &lt;<a class="reference" href="mailto:sluggoster&#64;gmail.com">sluggoster&#64;gmail.com</a>&gt;</td></tr>
+<tr class="field"><th class="docinfo-name">License:</th><td class="field-body">Python (<a class="reference" href="http://www.python.org/psf/license">http://www.python.org/psf/license</a>)</td>
+</tr>
+<tr class="field"><th class="docinfo-name">Based on:</th><td class="field-body">See HISTORY section below.</td>
+</tr>
+</tbody>
+</table>
+<!-- To format this document as HTML:
+rst2html.py README.txt README.html -->
+<div class="contents topic">
+<p class="topic-title first"><a id="contents" name="contents">Contents</a></p>
+<ul class="simple">
+<li><a class="reference" href="#introduction" id="id7" name="id7">Introduction</a></li>
+<li><a class="reference" href="#installation-and-testing" id="id8" name="id8">Installation and testing</a></li>
+<li><a class="reference" href="#path-and-abstractpath-objects" id="id9" name="id9">Path and AbstractPath objects</a><ul>
+<li><a class="reference" href="#constructor" id="id10" name="id10">Constructor</a></li>
+<li><a class="reference" href="#normalization" id="id11" name="id11">Normalization</a></li>
+<li><a class="reference" href="#properties" id="id12" name="id12">Properties</a></li>
+<li><a class="reference" href="#methods" id="id13" name="id13">Methods</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#path-objects-only" id="id14" name="id14">Path objects only</a><ul>
+<li><a class="reference" href="#note-on-arguments" id="id15" name="id15">Note on arguments</a></li>
+<li><a class="reference" href="#current-directory" id="id16" name="id16">Current directory</a></li>
+<li><a class="reference" href="#calculating-paths" id="id17" name="id17">Calculating paths</a></li>
+<li><a class="reference" href="#listing-directories" id="id18" name="id18">Listing directories</a></li>
+<li><a class="reference" href="#file-attributes-and-permissions" id="id19" name="id19">File attributes and permissions</a></li>
+<li><a class="reference" href="#modifying-paths" id="id20" name="id20">Modifying paths</a><ul>
+<li><a class="reference" href="#creating-renaming-removing" id="id21" name="id21">Creating/renaming/removing</a></li>
+<li><a class="reference" href="#symbolic-and-hard-links" id="id22" name="id22">Symbolic and hard links</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#high-level-operations" id="id23" name="id23">High-level operations</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#tools" id="id24" name="id24">Tools</a><ul>
+<li><a class="reference" href="#dict2dir" id="id25" name="id25">dict2dir</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#non-native-paths" id="id26" name="id26">Non-native paths</a></li>
+<li><a class="reference" href="#history" id="id27" name="id27">History</a></li>
+<li><a class="reference" href="#comparision-with-os-os-path-shutil-and-path-py" id="id28" name="id28">Comparision with os/os.path/shutil and path.py</a></li>
+<li><a class="reference" href="#design-decisions-open-issues" id="id29" name="id29">Design decisions / open issues</a></li>
+</ul>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id7" id="introduction" name="introduction">Introduction</a></h1>
+<p>Unipath is an object-oriented front end to the file/directory functions
+scattered throughout several Python library modules.  It's based on Jason
+Orendorff's <em>path.py</em> but does not adhere as strictly to the underlying
+functions' syntax, in order to provide more user convenience and higher-level
+functionality.  It comes with a test suite.</p>
+<div class="important">
+<p class="first admonition-title">Important</p>
+<p>Changes for Unipath 0.1.0 users</p>
+<p class="last"><tt class="docutils literal"><span class="pre">Path</span></tt> has been renamed to <tt class="docutils literal"><span class="pre">AbstractPath</span></tt>, and <tt class="docutils literal"><span class="pre">FSPath</span></tt> to <tt class="docutils literal"><span class="pre">Path</span></tt>.
+<tt class="docutils literal"><span class="pre">FSPath</span></tt> remains as an alias for backward compatibility.
+<tt class="docutils literal"><span class="pre">Path.symlink()</span></tt> is gone; use <tt class="docutils literal"><span class="pre">Path.write_link()</span></tt> instead.  (Note that
+the argument order is the opposite.)  See CHANGES.txt for the complete list
+of changes.</p>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">Path</span></tt> class encapsulates the file/directory operations in Python's
+<tt class="docutils literal"><span class="pre">os</span></tt>, <tt class="docutils literal"><span class="pre">os.path</span></tt>, and <tt class="docutils literal"><span class="pre">shutil</span></tt> modules.</p>
+<p>Its superclass <tt class="docutils literal"><span class="pre">AbstractPath</span></tt> class encapsulates those operations which
+aren't dependent on the filesystem.  This is mainly an academic distinction to
+keep the code clean.  Since <tt class="docutils literal"><span class="pre">Path</span></tt> can do everything <tt class="docutils literal"><span class="pre">AbstractPath</span></tt> does,
+most users just use <tt class="docutils literal"><span class="pre">Path</span></tt>.</p>
+<p>The API has been streamlined to focus on what the application developer wants
+to do rather than on the lowest-level operations; e.g., <tt class="docutils literal"><span class="pre">.mkdir()</span></tt> succeeds
+silently if the directory already exists, and <tt class="docutils literal"><span class="pre">.rmtree()</span></tt> doesn't barf if the
+target is a file or doesn't exist.  This allows the developer to write simple
+calls that &quot;just work&quot; rather than entire if-stanzas to handle low-level
+details s/he doesn't care about.  This makes applications more self-documenting
+and less cluttered.</p>
+<p>Convenience methods:</p>
+<blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">.read_file</span></tt> and <tt class="docutils literal"><span class="pre">.write_file</span></tt> encapsulate the open/read/close pattern.</li>
+<li><tt class="docutils literal"><span class="pre">.needs_update(others)</span></tt> tells whether the path needs updating; i.e.,
+if it doesn't exist or is older than any of the other paths.</li>
+<li><tt class="docutils literal"><span class="pre">.ancestor(N)</span></tt> returns the Nth parent directory, useful for joining paths.</li>
+<li><tt class="docutils literal"><span class="pre">.child(\*components)</span></tt> is a &quot;safe&quot; version of join.</li>
+<li><tt class="docutils literal"><span class="pre">.split_root()</span></tt> handles slash/drive/UNC absolute paths in a uniform way.</li>
+</ul>
+</blockquote>
+<ul class="simple">
+<li>Optional high-level functions in the <tt class="docutils literal"><span class="pre">unipath.tools</span></tt> module.</li>
+<li>For Python &gt;= 2.4</li>
+<li>Path objects are immutable so can be used as dictionary keys.</li>
+</ul>
+<p>Sample usage for pathname manipulation:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; from unipath import Path
+&gt;&gt;&gt; p = Path(&quot;/usr/lib/python2.5/gopherlib.py&quot;)
+&gt;&gt;&gt; p.parent
+Path(&quot;/usr/lib/python2.5&quot;)
+&gt;&gt;&gt; p.name
+Path(&quot;gopherlib.py&quot;)
+&gt;&gt;&gt; p.ext
+'.py'
+&gt;&gt;&gt; p.stem
+Path('gopherlib')
+&gt;&gt;&gt; q = Path(p.parent, p.stem + p.ext)
+&gt;&gt;&gt; q
+Path('/usr/lib/python2.5/gopherlib.py')
+&gt;&gt;&gt; q == p
+True
+</pre>
+<p>Sample usage for filesystem access:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; import tempfile
+&gt;&gt;&gt; from unipath import Path
+&gt;&gt;&gt; d = Path(tempfile.mkdtemp())
+&gt;&gt;&gt; d.isdir()
+True
+&gt;&gt;&gt; p = Path(d, &quot;sample.txt&quot;)
+&gt;&gt;&gt; p.exists()
+False
+&gt;&gt;&gt; p.write_file(&quot;The king is a fink!&quot;)
+&gt;&gt;&gt; p.exists()
+True
+&gt;&gt;&gt; print p.read_file()
+The king is a fink!
+&gt;&gt;&gt; d.rmtree()
+&gt;&gt;&gt; p.exists()
+False
+</pre>
+<p>The name &quot;Unipath&quot; is short for &quot;universal path&quot;, as it grew out of a
+discussion on python-dev about the ideal path API for Python.</p>
+<p>Unipath's API is mostly stable but there's no guarantee it won't change in
+future versions.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id8" id="installation-and-testing" name="installation-and-testing">Installation and testing</a></h1>
+<p>If you have EasyInstall, run &quot;easy_install unipath&quot;.  Otherwise unpack the
+source and run &quot;python setup.py install&quot; in the top-level directory.
+You can also copy the &quot;unipath&quot; directory to somewhere on your Python
+path.</p>
+<p>To test the library you'll need the Nose package.  cd to the top-level
+directory and run &quot;python unipath/test.py&quot;.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id9" id="path-and-abstractpath-objects" name="path-and-abstractpath-objects">Path and AbstractPath objects</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id10" id="constructor" name="constructor">Constructor</a></h2>
+<p><tt class="docutils literal"><span class="pre">Path</span></tt> (and <tt class="docutils literal"><span class="pre">AbstractPath</span></tt>) objects can be created from a string path, or
+from several string arguments which are joined together a la <tt class="docutils literal"><span class="pre">os.path.join</span></tt>.
+Each argument can be a string, an <tt class="docutils literal"><span class="pre">(Abstract)Path</span></tt> instance, an int or long,
+or a list/tuple of strings to be joined:</p>
+<pre class="literal-block">
+p = Path(&quot;foo/bar.py&quot;)       # A relative path
+p = Path(&quot;foo&quot;, &quot;bar.py&quot;)    # Same as previous
+p = Path([&quot;foo&quot;, &quot;bar.py&quot;])  # Same as previous
+p = Path(&quot;/foo&quot;, &quot;bar&quot;, &quot;baz.py&quot;)       # An absolute path: /foo/bar/baz.py
+p = Path(&quot;/foo&quot;, Path(&quot;bar/baz.py&quot;))    # Same as previous
+p = Path(&quot;/foo&quot;, [&quot;&quot;, &quot;bar&quot;, &quot;baz.py&quot;]) # Embedded Path.components() result
+p = Path(&quot;record&quot;, 123)      # Same as Path(&quot;record/123&quot;)
+
+p = Path(&quot;&quot;)     # An empty path
+p = Path()       # Same as Path(os.curdir)
+</pre>
+<p>To get the actual current directory, use <tt class="docutils literal"><span class="pre">Path.cwd()</span></tt>.  (This doesn't work
+with <tt class="docutils literal"><span class="pre">AbstractPath</span></tt>, of course.</p>
+<p>Adding two paths results in a concatenated path.  The other string methods
+return strings, so you'll have to wrap them in <tt class="docutils literal"><span class="pre">Path</span></tt> to make them paths
+again. A future version will probably override these methods to return paths.
+Multiplying a path returns a string, as if you'd ever want to do that.</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id11" id="normalization" name="normalization">Normalization</a></h2>
+<p>The new path is normalized to clean up redundant &quot;..&quot; and &quot;.&quot; in the
+middle, double slashes, wrong-direction slashes, etc.  On
+case-insensitive filesystems it also converts uppercase to lowercase.
+This is all done via <tt class="docutils literal"><span class="pre">os.path.normpath()</span></tt>.  Here are some examples
+of normalizations:</p>
+<pre class="literal-block">
+a//b  =&gt; a/b
+a/../b =&gt; b
+a/./b =&gt; a/b
+
+a/b =&gt; a\\b            # On NT.
+a\\b.JPG =&gt; a\\b.jpg   # On NT.
+</pre>
+<p>If the actual filesystem path contains symbolic links, normalizing &quot;..&quot; goes to
+the parent of the symbolic link rather than to the parent of the linked-to
+file.  For this reason, and because there may be other cases where normalizing
+produces the wrong path, you can disable automatic normalization by setting the
+<tt class="docutils literal"><span class="pre">.auto_norm</span></tt> class attribute to false.  I'm not sure whether Unipath should
+normalize by default, so if you care one way or the other you should explicitly
+set it at the beginning of your application.  You can override the auto_norm
+setting by passing &quot;norm=True&quot; or &quot;norm=False&quot; as a keyword argument to the
+constructor.  You can also call <tt class="docutils literal"><span class="pre">.norm()</span></tt> anytime to manually normalize the
+path.</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id12" id="properties" name="properties">Properties</a></h2>
+<p>Path objects have the following properties:</p>
+<dl class="docutils">
+<dt>.parent</dt>
+<dd>The path without the final component.</dd>
+<dt>.name</dt>
+<dd>The final component only.</dd>
+<dt>.ext</dt>
+<dd>The last part of the final component beginning with a dot (e.g., &quot;.gz&quot;), or
+&quot;&quot; if there is no dot.  This is also known as the extension.</dd>
+<dt>.stem</dt>
+<dd>The final component without the extension.</dd>
+</dl>
+<p>Examples are given in the first sample usage above.</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id13" id="methods" name="methods">Methods</a></h2>
+<p>Path objects have the following methods:</p>
+<dl class="docutils">
+<dt>.ancestor(N)</dt>
+<dd>Same as specifying <tt class="docutils literal"><span class="pre">.parent</span></tt> N times.</dd>
+<dt>.child(*components)</dt>
+<dd>Join paths in a safe manner.  The child components may not contain a path
+separator or be curdir or pardir (&quot;.&quot; or &quot;..&quot; on Posix).  This is to
+prevent untrusted arguments from creating a path above the original path's
+directory.</dd>
+<dt>.components()</dt>
+<dd>Return a list of directory components as strings.  The first component will
+be the root (&quot;/&quot; on Posix, a Windows drive root, or a UNC share) if the
+path is absolute, or &quot;&quot; if it's relative.  Calling <tt class="docutils literal"><span class="pre">Path(components)</span></tt>,
+<tt class="docutils literal"><span class="pre">Path(*components)</span></tt>, or <tt class="docutils literal"><span class="pre">os.path.join(*components)</span></tt> will recreate the
+original path.</dd>
+<dt>.expand()</dt>
+<dd>Same as <tt class="docutils literal"><span class="pre">p.expand_user().expand_vars().norm()</span></tt>.  Usually this is all
+you need to fix up a path read from a config file.</dd>
+<dt>.expand_user()</dt>
+<dd>Interpolate &quot;~&quot; and &quot;~user&quot; if the platform allows, and return a new path.</dd>
+<dt>.expand_vars()</dt>
+<dd>Interpolate environment variables like &quot;$BACKUPS&quot; if the platform allows,
+and return a new path.</dd>
+<dt>.isabsolute()</dt>
+<dd>Is the path absolute?</dd>
+<dt>.norm()</dt>
+<dd>See Normalization above.  Same as <tt class="docutils literal"><span class="pre">os.path.normpath</span></tt>.</dd>
+<dt>.norm_case()</dt>
+<dd>On case-insensitive platforms (Windows) convert the path to lower case.
+On case-sensitive platforms (Unix) leave the path as is.  This also turns
+forward slashes to backslashes on Windows.</dd>
+<dt>.split_root()</dt>
+<dd>Split this path at the root and return a tuple of two paths: the root and
+the rest of the path.  The root is the same as the first subscript of the
+<tt class="docutils literal"><span class="pre">.components()</span></tt> result.  Calling <tt class="docutils literal"><span class="pre">Path(root,</span> <span class="pre">rest)</span></tt> or
+<tt class="docutils literal"><span class="pre">os.path.join(root,</span> <span class="pre">rest)</span></tt> will produce the original path.</dd>
+</dl>
+<p>Examples:</p>
+<pre class="literal-block">
+Path(&quot;foo/bar.py&quot;).components() =&gt;
+    [Path(&quot;&quot;), Path(&quot;foo&quot;), Path(&quot;bar.py&quot;)]
+Path(&quot;foo/bar.py&quot;).split_root() =&gt;
+    (Path(&quot;&quot;), Path(&quot;foo/bar.py&quot;))
+
+Path(&quot;/foo/bar.py&quot;).components() =&gt;
+    [Path(&quot;/&quot;), Path(&quot;foo&quot;), Path(&quot;bar.py&quot;)]
+Path(&quot;/foo/bar.py&quot;).split_root() =&gt;
+    (Path(&quot;/&quot;), Path(&quot;foo/bar.py&quot;))
+
+Path(&quot;C:\\foo\\bar.py&quot;).components() =&gt;
+    [&quot;Path(&quot;C:\\&quot;), Path(&quot;foo&quot;), Path(&quot;bar.py&quot;)]
+Path(&quot;C:\\foo\\bar.py&quot;).split_root() =&gt;
+    (&quot;Path(&quot;C:\\&quot;), Path(&quot;foo\\bar.py&quot;))
+
+Path(&quot;\\\\UNC_SHARE\\foo\\bar.py&quot;).components() =&gt;
+    [Path(&quot;\\\\UNC_SHARE&quot;), Path(&quot;foo&quot;), Path(&quot;bar.py&quot;)]
+Path(&quot;\\\\UNC_SHARE\\foo\\bar.py&quot;).split_root() =&gt;
+    (Path(&quot;\\\\UNC_SHARE&quot;), Path(&quot;foo\\bar.py&quot;))
+
+Path(&quot;~/bin&quot;).expand_user() =&gt; Path(&quot;/home/guido/bin&quot;)
+Path(&quot;~timbot/bin&quot;).expand_user() =&gt; Path(&quot;/home/timbot/bin&quot;)
+Path(&quot;$HOME/bin&quot;).expand_vars() =&gt; Path(&quot;/home/guido/bin&quot;)
+Path(&quot;~//$BACKUPS&quot;).expand() =&gt; Path(&quot;/home/guido/Backups&quot;)
+
+Path(&quot;dir&quot;).child(&quot;subdir&quot;, &quot;file&quot;) =&gt; Path(&quot;dir/subdir/file&quot;)
+
+Path(&quot;/foo&quot;).isabsolute() =&gt; True
+Path(&quot;foo&quot;).isabsolute() =&gt; False
+</pre>
+<p>Note: a Windows drive-relative path like &quot;C:foo&quot; is considered absolute by
+<tt class="docutils literal"><span class="pre">.components()</span></tt>, <tt class="docutils literal"><span class="pre">.isabsolute()</span></tt>, and <tt class="docutils literal"><span class="pre">.split_root()</span></tt>, even though
+Python's <tt class="docutils literal"><span class="pre">ntpath.isabs()</span></tt> would return false.</p>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id14" id="path-objects-only" name="path-objects-only">Path objects only</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id15" id="note-on-arguments" name="note-on-arguments">Note on arguments</a></h2>
+<p>All arguments that take paths can also take strings.</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id16" id="current-directory" name="current-directory">Current directory</a></h2>
+<dl class="docutils">
+<dt>Path.cwd()</dt>
+<dd>Return the actual current directory; e.g., Path(&quot;/tmp/my_temp_dir&quot;).
+This is a class method.</dd>
+<dt>.chdir()</dt>
+<dd>Make self the current directory.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id17" id="calculating-paths" name="calculating-paths">Calculating paths</a></h2>
+<dl class="docutils">
+<dt>.resolve()</dt>
+<dd>Return the equivalent path without any symbolic links.  This normalizes
+the path as a side effect.</dd>
+<dt>.absolute()</dt>
+<dd>Return the absolute equivalent of self.  If the path is relative, this
+prefixes the current directory; i.e., <tt class="docutils literal"><span class="pre">FSPath(FSPath.cwd(),</span> <span class="pre">p)</span></tt>.</dd>
+<dt>.relative()</dt>
+<dd>Return an equivalent path relative to the current directory if possible.
+This may return a path prefixed with many &quot;../..&quot;.  If the path is on a
+different drive, this returns the original path unchanged.</dd>
+<dt>.rel_path_to(other)</dt>
+<dd>Return a path from self to other.  In other words, return a path for
+'other' relative to self.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id18" id="listing-directories" name="listing-directories">Listing directories</a></h2>
+<p><em>These methods are experimental and subject to change.</em></p>
+<dl class="docutils">
+<dt>.listdir(pattern=None, filter=ALL, names_only=False)</dt>
+<dd><p class="first">Return the filenames in this directory.</p>
+<p>'pattern' may be a glob expression like &quot;*.py&quot;.</p>
+<p>'filter' may be a function that takes a <tt class="docutils literal"><span class="pre">FSPath</span></tt> and returns true if it
+should be included in the results.  The following standard filters are
+defined in the <tt class="docutils literal"><span class="pre">unipath</span></tt> module:</p>
+<blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">DIRS</span></tt>: directories only</li>
+<li><tt class="docutils literal"><span class="pre">FILES</span></tt>: files only</li>
+<li><tt class="docutils literal"><span class="pre">LINKS</span></tt>: symbolic links only</li>
+<li><tt class="docutils literal"><span class="pre">FILES_NO_LINKS</span></tt>: files that aren't symbolic links</li>
+<li><tt class="docutils literal"><span class="pre">DIRS_NO_LINKS</span></tt>: directories that aren't symbolic links</li>
+<li><tt class="docutils literal"><span class="pre">DEAD_LINKS</span></tt>: symbolic links that point to nonexistent files</li>
+</ul>
+</blockquote>
+<p>This method normally returns FSPaths prefixed with 'self'.  If
+'names_only' is true, it returns the raw filenames as strings without a
+directory prefix (same as <tt class="docutils literal"><span class="pre">os.listdir</span></tt>).</p>
+<p>If both 'pattern' and 'filter' are specified, only paths that pass both are
+included.  'filter' must not be specified if 'names_only' is true.</p>
+<p class="last">Paths are returned in sorted order.</p>
+</dd>
+</dl>
+<p>.walk(pattern=None, filter=None, top_down=True)</p>
+<blockquote>
+<p>Yield <tt class="docutils literal"><span class="pre">FSPath</span></tt> objects for all files and directories under self,
+recursing subdirectories.  Paths are yielded in sorted order.</p>
+<p>'pattern' and 'filter' are the same as for <tt class="docutils literal"><span class="pre">.listdir()</span></tt>.</p>
+<p>If 'top_down' is true (default), yield directories before yielding
+the items in them.  If false, yield the items first.</p>
+</blockquote>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id19" id="file-attributes-and-permissions" name="file-attributes-and-permissions">File attributes and permissions</a></h2>
+<dl class="docutils">
+<dt>.atime()</dt>
+<dd>Return the path's last access time.</dd>
+<dt>.ctime()</dt>
+<dd>Return the path's ctime.  On Unix this returns the time the path's
+permissions and ownership were last modified.  On Windows it's the path
+creation time.</dd>
+<dt>.exists()</dt>
+<dd>Does the path exist?  For symbolic links, True if the linked-to file
+exists.  On some platforms this returns False if Python does not have
+permission to stat the file, even if it exists.</dd>
+<dt>.isdir()</dt>
+<dd>Is the path a directory?  Follows symbolic links.</dd>
+<dt>.isfile()</dt>
+<dd>Is the path a file?  Follows symbolic links.</dd>
+<dt>.islink()</dt>
+<dd>Is the path a symbolic link?</dd>
+<dt>.ismount()</dt>
+<dd>Is the path a mount point?  Returns true if self's parent is on a
+different device than self, or if self and its parent are the same
+directory.</dd>
+<dt>.lexists()</dt>
+<dd>Same as <tt class="docutils literal"><span class="pre">.exists()</span></tt> but don't follow a final symbolic link.</dd>
+<dt>.lstat()</dt>
+<dd>Same as <tt class="docutils literal"><span class="pre">.stat()</span></tt> but do not follow a final symbolic link.</dd>
+<dt>.size()</dt>
+<dd>Return the file size in bytes.</dd>
+<dt>.stat()</dt>
+<dd>Return a stat object to test file size, type, permissions, etc.
+See <tt class="docutils literal"><span class="pre">os.stat()</span></tt> for details.</dd>
+<dt>.statvfs()</dt>
+<dd>Return a <tt class="docutils literal"><span class="pre">StatVFS</span></tt> object.  This method exists only if the platform
+supports it.  See <tt class="docutils literal"><span class="pre">os.statvfs()</span></tt> for details.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id20" id="modifying-paths" name="modifying-paths">Modifying paths</a></h2>
+<div class="section">
+<h3><a class="toc-backref" href="#id21" id="creating-renaming-removing" name="creating-renaming-removing">Creating/renaming/removing</a></h3>
+<dl class="docutils">
+<dt>.chmod(mode)</dt>
+<dd>Change the path's permissions.  'mode' is octal; e.g., 0777.</dd>
+<dt>.chown(uid, gid)</dt>
+<dd>Change the path's ownership to the numeric uid and gid specified.
+Pass -1 if you don't want one of the IDs changed.</dd>
+<dt>.mkdir(parents=False)</dt>
+<dd>Create the directory, or succeed silently if it already exists.  If
+'parents' is true, create any necessary ancestor directories.</dd>
+<dt>.remove()</dt>
+<dd>Delete the file.  Raises OSError if it's a directory.</dd>
+<dt>.rename(dst, parents=False)</dt>
+<dd>Rename self to 'dst' atomically.  See <tt class="docutils literal"><span class="pre">os.rename()</span></tt> for additional
+details.  If 'parents' is True, create any intermediate destination
+directories necessary, and delete as many empty leaf source directories as
+possible.</dd>
+<dt>.rmdir(parents=False)</dt>
+<dd>Remove the directory, or succeed silently if it's already gone.  If
+'parents' is true, also remove as many empty ancestor directories as
+possible.</dd>
+<dt>.set_times(mtime=None, atime=None)</dt>
+<dd>Set the path's modification and access times.  If 'mtime' is None, use
+the current time.  If 'atime' is None or not specified, use the same time
+as 'mtime'.  To set the times based on another file, see <tt class="docutils literal"><span class="pre">.copy_stat()</span></tt>.</dd>
+</dl>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id22" id="symbolic-and-hard-links" name="symbolic-and-hard-links">Symbolic and hard links</a></h3>
+<dl class="docutils">
+<dt>.hardlink(src)</dt>
+<dd>Create a hard link at 'src' pointing to self.</dd>
+<dt>.write_link(target)</dt>
+<dd>Create a symbolic link at self pointing to 'target'.  The link will contain
+the exact string value of 'target' without checking whether that path exists
+or is a even a valid path for the filesystem.</dd>
+<dt>.make_relative_link_to(dst)</dt>
+<dd>Make a relative symbolic link from self to dst.  Same as
+<tt class="docutils literal"><span class="pre">self.write_link(self.rel_path_to(dst))</span></tt>.  (New in Unipath 0.2.0.)</dd>
+<dt>.read_link()</dt>
+<dd>Return the path that this symbolic link points to.</dd>
+</dl>
+</div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id23" id="high-level-operations" name="high-level-operations">High-level operations</a></h2>
+<dl class="docutils">
+<dt>.copy(dst, times=False, perms=False)</dt>
+<dd>Copy the file to a destination.  'times' and 'perms' are same as for
+<tt class="docutils literal"><span class="pre">.copy_stat()</span></tt>.</dd>
+<dt>.copy_stat(dst, times=True, perms=True)</dt>
+<dd>Copy the access/modification times and/or the permission bits from this
+path to another path.</dd>
+<dt>.copy_tree(dst, preserve_symlinks=False, times=False, perms=False)</dt>
+<dd>Recursively copy a directory tree to 'dst'.  'dst' must not exist; it will
+be created along with any missing ancestors.  If 'symlinks' is true,
+symbolic links will be recreated with the same path (absolute or relative);
+otherwise the links will be followed.  'times' and 'perms' are same as
+<tt class="docutils literal"><span class="pre">.copy_stat()</span></tt>.  <em>This method is not implemented yet.</em></dd>
+<dt>.move(dst)</dt>
+<dd>Recursively move a file or directory to another location.  This uses
+.rename() if possible.</dd>
+<dt>.needs_update(other_paths)</dt>
+<dd>Return True if self is missing or is older than any other path.
+'other_paths' can be a <tt class="docutils literal"><span class="pre">(FS)Path</span></tt>, a string path, or a list/tuple
+of these.  Recurses through subdirectories but compares only files.</dd>
+<dt>.read_file(mode=&quot;r&quot;)</dt>
+<dd>Return the file's content as a <tt class="docutils literal"><span class="pre">str</span></tt> string.  This encapsulates the
+open/read/close.  'mode' is the same as in Python's <tt class="docutils literal"><span class="pre">open()</span></tt> function.</dd>
+<dt>.rmtree(parents=False)</dt>
+<dd>Recursively remove this path, no matter whether it's a file or a
+directory.  Succeed silently if the path doesn't exist.  If 'parents' is
+true, also try to remove as many empty ancestor directories as possible.</dd>
+<dt>.write_file(content, mode=&quot;w&quot;)</dt>
+<dd>Replace the file's content, creating the file if
+necessary.  'mode' is the same as in Python's <tt class="docutils literal"><span class="pre">open()</span></tt> function.
+'content' is a <tt class="docutils literal"><span class="pre">str</span></tt> string.  You'll have to encode Unicode strings
+before calling this.</dd>
+</dl>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id24" id="tools" name="tools">Tools</a></h1>
+<p>The following functions are in the <tt class="docutils literal"><span class="pre">unipath.tools</span></tt> module.</p>
+<div class="section">
+<h2><a class="toc-backref" href="#id25" id="dict2dir" name="dict2dir">dict2dir</a></h2>
+<p>dict2dir(dir, dic, mode=&quot;w&quot;)  =&gt;  None</p>
+<blockquote>
+Create a directory that matches the dict spec.  String values are turned
+into files named after the key.  Dict values are turned into
+subdirectories.  'mode' specifies the mode for files.  'dir' can be an
+<tt class="docutils literal"><span class="pre">[FS]Path</span></tt> or a string path.</blockquote>
+<p>dump_path(path, prefix=&quot;&quot;, tab=&quot;    &quot;, file=None)  =&gt;  None</p>
+<blockquote>
+<p>Display an ASCII tree of the path.  Files are displayed as
+&quot;filename (size)&quot;.  Directories have &quot;:&quot; at the end of the line and
+indentation below, like Python syntax blocks.  Symbolic links are
+shown as &quot;link -&gt; target&quot;.  'prefix' is a string prefixed to every
+line, normally to controll indentation.  'tab' is the indentation
+added for each directory level.  'file' specifies an output file object,
+or <tt class="docutils literal"><span class="pre">None</span></tt> for <tt class="docutils literal"><span class="pre">sys.stdout</span></tt>.</p>
+<p>A future version of Unipath will have a command-line program to
+dump a path.</p>
+</blockquote>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id26" id="non-native-paths" name="non-native-paths">Non-native paths</a></h1>
+<p>If you want to make Windows-style paths on Unix or vice-versa, you can
+subclass <tt class="docutils literal"><span class="pre">AbstractPath</span></tt> and set the <tt class="docutils literal"><span class="pre">pathlib</span></tt> class attribute to one of
+Python's OS-specific path modules (<tt class="docutils literal"><span class="pre">posixpath</span></tt> or <tt class="docutils literal"><span class="pre">ntpath</span></tt>) or a
+third-party equivalent.  To convert from one syntax to another, pass the path
+object to the other constructor.</p>
+<p>This is not practical with <tt class="docutils literal"><span class="pre">Path</span></tt> because the OS will reject or misinterpret
+non-native paths.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id27" id="history" name="history">History</a></h1>
+<dl class="docutils">
+<dt>2004-03-07</dt>
+<dd><p class="first">Released as path.py by Jason Orendorff &lt;<a class="reference" href="mailto:jason&#64;jorendorff.com">jason&#64;jorendorff.com</a>&gt;.
+That version is a subclass of unicode and combines methods from
+os.path, os, and shutil, and includes globbing features.
+Other contributors are listed in the source.</p>
+<ul class="last simple">
+<li><a class="reference" href="http://www.jorendorff.com/articles/python/path">http://www.jorendorff.com/articles/python/path</a></li>
+</ul>
+</dd>
+<dt>2005-07</dt>
+<dd>Modified by Reinhold Birkenfeld in preparation for a Python PEP.
+Convert all filesystem-accessing properties to methods, rename stuff, and
+use self.__class__ instead of hardwired constructor to aid subclassing.
+Source was in Python CVS in the &quot;sandbox&quot; section but I can't find it in
+the current Subversion repository; was it deleted?  What's the incantation
+to bring it back?</dd>
+<dt>2006-01</dt>
+<dd><p class="first">Modified by Björn Lindqvist &lt;<a class="reference" href="mailto:bjourne&#64;gmail.com">bjourne&#64;gmail.com</a>&gt; for PEP 355.
+Replace .joinpath() with a multi-argument constructor.</p>
+<ul class="last simple">
+<li>overview:  <a class="reference" href="http://www.python.org/dev/peps/pep-0355/">http://www.python.org/dev/peps/pep-0355/</a></li>
+<li>code:  <a class="reference" href="http://wiki.python.org/moin/PathModule">http://wiki.python.org/moin/PathModule</a></li>
+</ul>
+</dd>
+<dt>2006</dt>
+<dd><p class="first">Influenced by Noam Raphael's alternative path module.  This subclasses
+tuple rather than unicode, representing a tuple of directory components a
+la <tt class="docutils literal"><span class="pre">tuple(os.path.splitall(&quot;a/b&quot;))</span></tt>. The discussion covers several design
+decisions and open issues.</p>
+<ul class="last simple">
+<li>overview:  <a class="reference" href="http://wiki.python.org/moin/AlternativePathClass">http://wiki.python.org/moin/AlternativePathClass</a></li>
+<li>code:  <a class="reference" href="http://wiki.python.org/moin/AlternativePathModule">http://wiki.python.org/moin/AlternativePathModule</a></li>
+<li>discussion:  <a class="reference" href="http://wiki.python.org/moin/AlternativePathDiscussion">http://wiki.python.org/moin/AlternativePathDiscussion</a></li>
+</ul>
+</dd>
+<dt>2007-01</dt>
+<dd><p class="first">Renamed unipath and modified by Mike Orr &lt;<a class="reference" href="mailto:sluggoster&#64;gmail.com">sluggoster&#64;gmail.com</a>&gt;.
+Move filesystem operations into a subclass FSPath.  Add and rename methods
+and properties.  Influenced by these mailing-list threads:</p>
+<ul class="last simple">
+<li>&#64;&#64;MO coming soon</li>
+</ul>
+</dd>
+<dt>2008-05</dt>
+<dd>Released version 0.2.0.  Renamed <tt class="docutils literal"><span class="pre">Path</span></tt> to <tt class="docutils literal"><span class="pre">AbstractPath</span></tt>, and
+<tt class="docutils literal"><span class="pre">FSPath</span></tt> to <tt class="docutils literal"><span class="pre">Path</span></tt>.</dd>
+</dl>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id28" id="comparision-with-os-os-path-shutil-and-path-py" name="comparision-with-os-os-path-shutil-and-path-py">Comparision with os/os.path/shutil and path.py</a></h1>
+<pre class="literal-block">
+p = any path, f =  file, d = directory, l = link
+fsp, fsf, fsd, fsl = filesystem path (i.e., ``Path`` only)
+- = not implemented
+</pre>
+<p>Functions are listed in the same order as the Python Library Reference, version
+2.5.  (Sorry the table is badly formatted.)</p>
+<pre class="literal-block">
+os/os.path/shutil      path.py        Unipath           Notes
+=================      ============== ==========        =======
+os.path.abspath(p)     p.abspath()    p.absolute()     Return absolute path.
+os.path.basename(p)    p.name         p.name
+os.path.commonprefix(p)  -            -                Common prefix. [1]_
+os.path.dirname(p)     p.parent       p.parent         All except the last component.
+os.path.exists(p)      p.exists()     fsp.exists()     Does the path exist?
+os.path.lexists(p)     p.lexists()    fsp.lexists()    Does the symbolic link exist?
+os.path.expanduser(p)  p.expanduser() p.expand_user()  Expand &quot;~&quot; and &quot;~user&quot; prefix.
+os.path.expandvars(p)  p.expandvars() p.expand_vars()  Expand &quot;$VAR&quot; environment variables.
+os.path.getatime(p)    p.atime        fsp.atime()      Last access time.
+os.path.getmtime(p)    p.mtime        fsp.mtime()      Last modify time.
+os.path.getctime(p)    p.ctime        fsp.ctime()      Platform-specific &quot;ctime&quot;.
+os.path.getsize(p)     p.size         fsp.size()       File size.
+os.path.isabs(p)       p.isabs()      p.isabsolute     Is path absolute?
+os.path.isfile(p)      p.isfile()     fsp.isfile()     Is a file?
+os.path.isdir(p)       p.isdir()      fsp.isdir()      Is a directory?
+os.path.islink(p)      p.islink()     fsp.islink()     Is a symbolic link?
+os.path.ismount(p)     p.ismount()    fsp.ismount()    Is a mount point?
+os.path.join(p, &quot;Q/R&quot;) p.joinpath(&quot;Q/R&quot;)  [FS]Path(p, &quot;Q/R&quot;)  Join paths.
+                                          -or-
+                                          p.child(&quot;Q&quot;, &quot;R&quot;)
+os.path.normcase(p)    p.normcase()    p.norm_case()   Normalize case.
+os.path.normpath(p)    p.normpath()    p.norm()        Normalize path.
+os.path.realpath(p)    p.realpath()    fsp.real_path() Real path without symbolic links.
+os.path.samefile(p, q) p.samefile(q)   fsp.same_file(q)  True if both paths point to the same filesystem item.
+os.path.sameopenfile(d1, d2)  -          -               [Not a path operation.]
+os.path.samestat(st1, st2)    -          -               [Not a path operation.]
+os.path.split(p)       p.splitpath()   (p.parent, p.name) Split path at basename.
+os.path.splitdrive(p)  p.splitdrive()   -                 [2]_
+os.path.splitext(p)    p.splitext()     -                 [2]_
+os.path.splitunc(p)    p.splitunc()     -                 [2]_
+os.path.walk(p, func, args)  -          -                 [3]_
+
+os.access(p, const)    p.access(const)  -                 [4]_
+os.chdir(d)            -                fsd.chdir()       Change current directory.
+os.fchdir(fd)          -                -                 [Not a path operation.]
+os.getcwd()           path.getcwd()     FSPath.cwd()      Get current directory.
+os.chroot(d)          d.chroot()        -                 [5]_
+os.chmod(p, 0644)     p.chmod(0644)     fsp.chmod(0644)     Change mode (permission bits).
+os.chown(p, uid, gid) p.chown(uid, gid) fsp.chown(uid, gid) Change ownership.
+os.lchown(p, uid, gid) -                -                 [6]_
+os.link(src, dst)     p.link(dst)       fsp.hardlink(dst)   Make hard link.
+os.listdir(d)         -                 fsd.listdir(names_only=True)  List directory; return base filenames.
+os.lstat(p)           p.lstat()         fsp.lstat()         Like stat but don't follow symbolic link.
+os.mkfifo(p, 0666)    -                 -                 [Not enough of a path operation.]
+os.mknod(p, ...)      -                 -                 [Not enough of a path operation.]
+os.major(device)      -                 -                 [Not a path operation.]
+os.minor(device)      -                 -                 [Not a path operation.]
+os.makedev(...)       -                 -                 [Not a path operation.]
+os.mkdir(d, 0777)     d.mkdir(0777)     fsd.mkdir(mode=0777)     Create directory.
+os.makedirs(d, 0777)  d.makedirs(0777)  fsd.mkdir(True, 0777)    Create a directory and necessary parent directories.
+os.pathconf(p, name)  p.pathconf(name)  -                  Return Posix path attribute.  (What the hell is this?)
+os.readlink(l)        l.readlink()      fsl.read_link()      Return the path a symbolic link points to.
+os.remove(f)          f.remove()        fsf.remove()       Delete file.
+os.removedirs(d)      d.removedirs()    fsd.rmdir(True)    Remove empty directory and all its empty ancestors.
+os.rename(src, dst)   p.rename(dst)     fsp.rename(dst)      Rename a file or directory atomically (must be on same device).
+os.renames(src, dst)  p.renames(dst)    fsp.rename(dst, True) Combines os.rename, os.makedirs, and os.removedirs.
+os.rmdir(d)           d.rmdir()         fsd.rmdir()        Delete empty directory.
+os.stat(p)            p.stat()          fsp.stat()         Return a &quot;stat&quot; object.
+os.statvfs(p)         p.statvfs()       fsp.statvfs()      Return a &quot;statvfs&quot; object.
+os.symlink(src, dst)  p.symlink(dst)    fsp.write_link(link_text)   Create a symbolic link.
+                                        (&quot;write_link&quot; argument order is opposite from Python's!)
+os.tempnam(...)       -                 -                  [7]_
+os.unlink(f)          f.unlink()        -                  Same as .remove().
+os.utime(p, times)    p.utime(times)    fsp.set_times(mtime, atime)  Set access/modification times.
+os.walk(...)          -                 -                  [3]_
+
+shutil.copyfile(src, dst)  f.copyfile(dst) fsf.copy(dst, ...)  Copy file.  Unipath method is more than copyfile but less than copy2.
+shutil.copyfileobj(...)   -             -                  [Not a path operation.]
+shutil.copymode(src, dst) p.copymode(dst)  fsp.copy_stat(dst, ...)  Copy permission bits only.
+shutil.copystat(src, dst) p.copystat(dst)  fsp.copy_stat(dst, ...)  Copy stat bits.
+shutil.copy(src, dst)  f.copy(dst)      -                  High-level copy a la Unix &quot;cp&quot;.
+shutil.copy2(src, dst) f.copy2(dst)     -                  High-level copy a la Unix &quot;cp -p&quot;.
+shutil.copytree(...)  d.copytree(...)   fsp.copy_tree(...)   Copy directory tree.  (Not implemented in Unipath 0.1.0.)
+shutil.rmtree(...)    d.rmtree(...)     fsp.rmtree(...)    Recursively delete directory tree.  (Unipath has enhancements.)
+shutil.move(src, dst) p.move(dst)       fsp.move(dst)      Recursively move a file or directory, using os.rename() if possible.
+
+A + B                 A + B             A+B                Concatenate paths.
+os.path.join(A, B)    A / B             [FS]Path(A, B)     Join paths.
+                                        -or-
+                                        p.child(B)
+-                     p.expand()        p.expand()         Combines expanduser, expandvars, normpath.
+os.path.dirname(p)    p.parent          p.parent           Path without final component.
+os.path.basename(p)   p.name            p.name             Final component only.
+[8]_                  p.namebase        p.stem             Final component without extension.
+[9]_                  p.ext             p.ext              Extension only.
+os.path.splitdrive(p)[0] p.drive        -                  [2]_
+-                     p.stripext()      -                  Strip final extension.
+-                     p.uncshare        -                  [2]_
+-                     p.splitall()      p.components()     List of path components.  (Unipath has special first element.)
+-                     p.relpath()       fsp.relative()       Relative path to current directory.
+-                     p.relpathto(dst)  fsp.rel_path_to(dst) Relative path to 'dst'.
+-                     d.listdir()       fsd.listdir()        List directory, return paths.
+-                     d.files()         fsd.listdir(filter=FILES)  List files in directory, return paths.
+-                     d.dirs()          fsd.listdir(filter=DIRS)   List subdirectories, return paths.
+-                     d.walk(...)       fsd.walk(...)        Recursively yield files and directories.
+-                     d.walkfiles(...)  fsd.walk(filter=FILES)  Recursively yield files.
+-                     d.walkdirs(...)   fsd.walk(filter=DIRS)  Recursively yield directories.
+-                     p.fnmatch(pattern)  -                 True if self.name matches glob pattern.
+-                     p.glob(pattern)   -                   Advanced globbing.
+-                     f.open(mode)      -                   Return open file object.
+-                     f.bytes()         fsf.read_file(&quot;rb&quot;)   Return file contents in binary mode.
+-                     f.write_bytes()   fsf.write_file(content, &quot;wb&quot;)  Replace file contents in binary mode.
+-                     f.text(...)       fsf.read_file()       Return file content.  (Encoding args not implemented yet.)
+-                     f.write_text(...) fsf.write_file(content)  Replace file content.  (Not all Orendorff args supported.)
+-                     f.lines(...)      -                   Return list of lines in file.
+-                     f.write_lines(...)  -                 Write list of lines to file.
+-                     f.read_md5()      -                   Calculate MD5 hash of file.
+-                     p.owner           -                   Advanded &quot;get owner&quot; operation.
+-                     p.readlinkabs()   -                   Return the path this symlink points to, converting to absolute path.
+-                     p.startfile()     -                   What the hell is this?
+
+-                     -                 p.split_root()      Unified &quot;split root&quot; method.
+-                     -                 p.ancestor(N)       Same as specifying .parent N times.
+-                     -                 p.child(...)        &quot;Safe&quot; way to join paths.
+-                     -                 fsp.needs_update(...) True if self is missing or older than any of the other paths.
+</pre>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a name="id1">[1]</a></td><td>The Python method is too dumb; it can end a prefix in the middle of a</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a name="id2">[2]</a></td><td>Closest equivalent is <tt class="docutils literal"><span class="pre">p.split_root()</span></tt> for approximate equivalent.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a name="id3">[3]</a></td><td>More convenient alternatives exist.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a name="id4">[4]</a></td><td>Inconvenient constants; not used enough to port.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a name="id5">[5]</a></td><td>Chroot is more of an OS operation than a path operation.  Plus it's
+dangerous.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a name="id6">[6]</a></td><td>Ownership of symbolic link doesn't matter because the OS never
+consults its permission bits.</td></tr>
+</tbody>
+</table>
+<!-- [7]_ ``os.tempnam`` is insecure; use ``os.tmpfile`` or ``tempfile`` module
+instead. -->
+<!-- [8]_ ``os.path.splitext(os.path.split(p))[0]`` -->
+<!-- [9]_ ``os.path.splitext(os.path.split(p))[1]`` -->
+<!-- [10]_ Closest equivalent is ``p.split_root()[0]``. -->
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id29" id="design-decisions-open-issues" name="design-decisions-open-issues">Design decisions / open issues</a></h1>
+<p>(Sorry this is so badly organized.)</p>
+<p>The original impetus for Unipath was to get object-oriented paths into the
+Python standard library.  All the previous path classes were rejected as
+too large and monolithic, especially for mixing pathname manipulations and
+filesystem methods in the same class.  Upon reflection, it's mainly the
+pathname operations that need to be OO-ified because they are often nested in
+expressions.  There's a small difference between <tt class="docutils literal"><span class="pre">p.mkdir()</span></tt> and
+<tt class="docutils literal"><span class="pre">os.mkdir(p)</span></tt>, but there's a huge difference between
+<tt class="docutils literal"><span class="pre">os.path.join(os.path.dirname(os.path.dirname(&quot;/A/B/C&quot;))),</span> <span class="pre">&quot;app2/lib&quot;)</span></tt> and
+<tt class="docutils literal"><span class="pre">Path(&quot;/A/B/C&quot;).parent.parent.child(&quot;app2&quot;,</span> <span class="pre">&quot;lib&quot;)</span></tt>: the former is flat-out
+unreadable.  So I have kept <tt class="docutils literal"><span class="pre">Path</span></tt> to a conservative API that hopefully most
+Pythoneers can agree on.  I allowed myself more freedom with <tt class="docutils literal"><span class="pre">FSPath</span></tt>
+because it's unclear that a class with filesystem methods would ever be
+accepted into the stdlib anyway, and I needed an API I'd want to use in my own
+programs.  (<tt class="docutils literal"><span class="pre">Path</span></tt> was renamed to <tt class="docutils literal"><span class="pre">AbstractPath</span></tt> in Unipath 0.2.0, and
+<tt class="docutils literal"><span class="pre">FSPath</span></tt> to <tt class="docutils literal"><span class="pre">Path</span></tt>.  This section uses the older vocabulary.)</p>
+<p>Another important point is that properties may not access the filesystem.
+Only methods may access the filesystem.  So <tt class="docutils literal"><span class="pre">p.parent</span></tt> is a property, but
+<tt class="docutils literal"><span class="pre">p.mtime()</span></tt> is a method.  This required turning some of Orendorff's
+properties into methods.</p>
+<p>The actual <tt class="docutils literal"><span class="pre">FSPath</span></tt> class ended up closer to Orendorff's original than
+I had intended, because several of the planned innovations (from python-3000
+suggestions, Raphael's alternative path class, and my own mind) turned to be
+not necessarily superior in actual programs, whereas Orendorff's methods have
+proven themselves reliable in production systems for three years now, so I
+deferred to them when in doubt.</p>
+<p>The biggest such move was making <tt class="docutils literal"><span class="pre">FSPath</span></tt> a
+subclass of <tt class="docutils literal"><span class="pre">Path</span></tt>.  Originally I had tried to make them unrelated classes
+(<tt class="docutils literal"><span class="pre">FSPath</span></tt> containing a <tt class="docutils literal"><span class="pre">Path</span></tt>), but this became unworkable in the
+implementation due to the constant need to call both types of methods.
+(Say you have an FSPath directory and you need to join a
+filename to it and then delete the file; do you really want to convert from
+FSPath to Path and back again?  Do you <em>really</em> want to write
+&quot;FSPath(Path(my_fspath.path, 'foo'))&quot;?)  So one class is better than two, even
+if the BDFL disapproves.  I opted for the best of both worlds via inheritance,
+so those who want one class can pretend it is, and those who want two classes
+can get a warm fuzzy feeling that they're defined separately. (They can even
+ignore <tt class="docutils literal"><span class="pre">FSPath</span></tt> and use <tt class="docutils literal"><span class="pre">Path</span></tt> with <tt class="docutils literal"><span class="pre">os.*</span></tt> functions if they prefer.)
+If <tt class="docutils literal"><span class="pre">Path</span></tt> is someday accepted into the standard libary, <tt class="docutils literal"><span class="pre">FSPath</span></tt> will
+become a subclass of that.  And others can subclass <tt class="docutils literal"><span class="pre">FSPath</span></tt> or write an
+alternative if they don't like my API.</p>
+<p>I also intended to put all non-trivial code into generic functions that
+third-party path libraries could call.  But that also became unworkable due to
+the tight integration that naturally occurs between the methods, one calling
+another.  What's really needed now is for <tt class="docutils literal"><span class="pre">FSPath</span></tt> to get into the real world
+so we can see which generic code actually is valuable, and then those can be
+factored out later.</p>
+<p><tt class="docutils literal"><span class="pre">.stem</span></tt> is called stem because &quot;namebase&quot; can be confused with
+<tt class="docutils literal"><span class="pre">os.path.basename()</span></tt>, &quot;name_without_ext&quot; is too wordy, and &quot;name_no_ext&quot; is
+looks like bad English.</p>
+<p>All method names have underscores between words except those starting with
+&quot;is&quot;, &quot;mk&quot;, &quot;rm&quot;, and &quot;stat&quot;.  The &quot;is&quot; methods are so highly used that
+deviating from the <tt class="docutils literal"><span class="pre">os.path</span></tt>/Orendorff spelling would trip up a lot of
+programmers, including me.  &quot;mk&quot; and &quot;rm&quot; I just like.  (Be glad I didn't
+rename <tt class="docutils literal"><span class="pre">.copy_tree</span></tt> to &quot;cptree&quot; to match <tt class="docutils literal"><span class="pre">.rmtree</span></tt>.) (or &quot;.drive&quot; and
+&quot;.unc&quot; properties) are not needed.  They may be added if they prove necessary,
+but then how do you get &quot;everything except the drive&quot; or &quot;everything except the
+UNC prefix&quot;.  I also had to move the slash following the UNC prefix to the
+prefix itself, to maintain the rule that everything after the first component
+is a relative path.</p>
+<p>I tried making a smart stat object so that one could do &quot;p.stat().size&quot; and
+&quot;p.stat().isdir&quot;.  This was one of the proposals for Raphael's class, to get
+rid of a bunch of top-level methods and obviate the need for a set of &quot;l&quot;
+methods covering the &quot;stat&quot; and &quot;lstat&quot; operations.  I also made a phony stat
+object if the path didn't exist, to hang the &quot;.exists&quot; attribute off.  But I
+was so used to typing <tt class="docutils literal"><span class="pre">p.isdir()</span></tt> etc from Orendorff that I couldn't adjust.
+And Python has only one &quot;l&quot; function anyway, <tt class="docutils literal"><span class="pre">os.path.lexists()</span></tt>.  <em>And</em> I
+didn't want to write the stat object in C, meaning every stat would incur
+Python overhead to convert the result attributes.  So in the end I decided to
+keep the methods shadowing the <tt class="docutils literal"><span class="pre">os.path</span></tt> convenience functions, remove the
+&quot;get&quot; prefix from the &quot;get&quot; methods (&quot;getmtime&quot;), and let <tt class="docutils literal"><span class="pre">.stat</span></tt> and
+<tt class="docutils literal"><span class="pre">.statvfs</span></tt> return the Python default object.  I'm still tempted to make
+<tt class="docutils literal"><span class="pre">.stat()</span></tt> and <tt class="docutils literal"><span class="pre">.statvfs</span></tt> return <tt class="docutils literal"><span class="pre">None</span></tt> if the path doesn't exist (rather
+than raising <tt class="docutils literal"><span class="pre">OSError</span></tt>), but I'm not sure that's necessarily <em>better</em> so I
+held off on that.  Presumably one wouldn't use <tt class="docutils literal"><span class="pre">.stat()</span></tt> that much anyway
+since the other methods are more convenient.</p>
+<p><tt class="docutils literal"><span class="pre">.components()</span></tt> comes from Raphael's class, the concept of treating paths as
+a list of components, with the first component being the filesystem root (for
+an absolute path).  This required unifying Posix and Windows roots into a
+common definition.  <tt class="docutils literal"><span class="pre">.split_root()</span></tt> handles drive paths and UNC paths, so
+&quot;splitdrive&quot; and &quot;splitunc&quot; (or &quot;.drive&quot; and &quot;.unc&quot; properties) were deemed
+unnecessary.  They may be added later if needed.  One problem with &quot;.drive&quot; and
+&quot;.unc&quot; properties is how to specify &quot;everything except the drive&quot; and
+&quot;everything except the UNC prefix&quot;, which are needed to recreate the path or
+derive a similar path.  The slash after the UNC prefix was also moved to the
+prefix, to maintain the rule that all components after the first make a
+relative path.</p>
+<p>&quot;Components&quot; turned out to be a useful way to convert paths from one platform
+to another, which was one of Talin's requests.  However, what Talin really
+wanted was to put Posix paths in a config file and have them translate to the
+native platform.  Since <tt class="docutils literal"><span class="pre">.norm()</span></tt> and <tt class="docutils literal"><span class="pre">.norm_case()</span></tt> already do this on
+Windows, it's questionable how much cross-platform support is really necessary.
+Especially since <tt class="docutils literal"><span class="pre">macpath</span></tt> is obsolete now that Mac OS X uses Posix, and Mac
+OS 9 is about to be dropped from Python.  So the multi-platform code is
+probational.</p>
+<p>Joining paths is done via the constructor, which takes multiple positional
+arguments.  This was deemed as better than Orendorff's &quot;.joinpath&quot; method for
+reasons I'm not sure of.</p>
+<p><tt class="docutils literal"><span class="pre">.child()</span></tt> was requested by Glyph, to create safe subpaths that can never
+reach outside their parent directory even if based on untrusted user strings.
+It's also sneaky way to do &quot;joinpath&quot; when you're really prefer to use a method
+rather than the costructor, as long as each component has to be passed as a
+separate argument.</p>
+<p>Orendorff has &quot;.listdir&quot;, &quot;.dirs&quot;, and &quot;.files&quot; methods (non-recursive), and
+&quot;.walk&quot;, &quot;.walkdirs&quot;, and &quot;walkfiles&quot; (recursive).  Raphael has one &quot;.glob&quot;
+method to rule them all.  I went back and forth on this several times and
+finally settled on <tt class="docutils literal"><span class="pre">.listdir</span></tt> (non-recursive) and <tt class="docutils literal"><span class="pre">.walk</span></tt> (recursive), with
+a 'filter' argument to return only files or directories.  Neither Orendorff nor
+Raphael nor <tt class="docutils literal"><span class="pre">os.walk</span></tt> handle symlinks adequately in my opinion: sometimes you
+want to exclude symlinks and then list them separately.  <tt class="docutils literal"><span class="pre">.listdir</span></tt> has a
+'names_only' option to make it return just the filenames like <tt class="docutils literal"><span class="pre">os.listdir</span></tt>,
+because sometimes that's what you need, and there's no reason to create paths
+you're just going to unpack again anyway.  <tt class="docutils literal"><span class="pre">.listdir</span></tt> and <tt class="docutils literal"><span class="pre">.walk</span></tt> are
+separate methods because implementing them as one is complicated -- they have
+so many contingencies.  <tt class="docutils literal"><span class="pre">.listdir()</span></tt> and <tt class="docutils literal"><span class="pre">.listdir(names_only=True)</span></tt> are
+the same method because I couldn't come up with a better name for the former.
+I dropped the name &quot;glob&quot; because it's meaningless to non-Unix users.</p>
+<p><tt class="docutils literal"><span class="pre">.absolute</span></tt>, <tt class="docutils literal"><span class="pre">.relative</span></tt>, and <tt class="docutils literal"><span class="pre">.resolve</span></tt> are hopefully better named than
+Orendorff's &quot;abspath&quot;, &quot;relpath&quot;, and &quot;realpath&quot;, which were taken directly
+from <tt class="docutils literal"><span class="pre">os.path</span></tt>.  <tt class="docutils literal"><span class="pre">.hardlink</span></tt> is so-named because it's less used than
+<tt class="docutils literal"><span class="pre">.symlink</span></tt> nowadays, and a method named &quot;.link&quot; is easy to misinterpret.</p>
+<p>I wanted a symbolic syntax for <tt class="docutils literal"><span class="pre">.chmod</span></tt> (&quot;u=rwx,g+w&quot;) and a companion
+function to parse a numeric mode, and user names/group names for <tt class="docutils literal"><span class="pre">.chown</span></tt>,
+but those were deferred to get the basic classes out the door.  The methods
+take the same arguments as their <tt class="docutils literal"><span class="pre">os</span></tt> counterparts.</p>
+</div>
+</div>
+</body>
+</html>
