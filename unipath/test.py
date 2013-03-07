@@ -45,7 +45,7 @@ def r(exception, func, *args, **kw):
         func(*args, **kw)
     except exception:
         pass
-    except Exception, e:
+    except Exception as e:
         tup = exception.__name__, e.__class__.__name__, e
         raise AssertionError("expected %s, caught %s: %s" % tup)
     else:
@@ -221,7 +221,7 @@ class FilesystemTest(object):
             if d.exists():
                 raise AssertionError("unable to delete temp dir %s" % d)
         else:
-            print "Not deleting test directory", d
+            print("Not deleting test directory", d)
 
 
 class TestCalculatingPaths(FilesystemTest):
@@ -508,9 +508,9 @@ class TestStatAttributes(FilesystemTest):
             assert hasattr(stv, "f_files")
 
     def test_chmod(self):
-        self.a_file.chmod(0600)
+        self.a_file.chmod(0o600)
         newmode = self.a_file.stat().st_mode
-        eq_(newmode & 0777, 0600)
+        eq_(newmode & 0o777, 0o600)
 
     # Can't test chown: requires root privilege and knowledge of local users.
 

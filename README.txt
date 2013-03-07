@@ -96,7 +96,7 @@ Sample usage for filesystem access::
     >>> p.write_file("The king is a fink!")
     >>> p.exists()
     True
-    >>> print p.read_file()
+    >>> print(p.read_file())
     The king is a fink!
     >>> d.rmtree()
     >>> p.exists()
@@ -554,7 +554,7 @@ History
     to bring it back?
 
 2006-01
-    Modified by Björn Lindqvist <bjourne@gmail.com> for PEP 355.
+    Modified by Bjï¿½rn Lindqvist <bjourne@gmail.com> for PEP 355.
     Replace .joinpath() with a multi-argument constructor.
 
     - overview:  http://www.python.org/dev/peps/pep-0355/

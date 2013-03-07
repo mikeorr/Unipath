@@ -23,10 +23,10 @@ def dump_path(path, prefix="", tab="    ", file=None):
         file = sys.stdout
     p = Path(path)
     if   p.islink():
-        print >>file, "%s%s -> %s" % (prefix, p.name, p.read_link())
+        print("%s%s -> %s" % (prefix, p.name, p.read_link()), file=file)
     elif p.isdir():
-        print >>file, "%s%s:" % (prefix, p.name)
+        print("%s%s:" % (prefix, p.name), file=file)
         for p2 in p.listdir():
             dump_path(p2, prefix+tab, tab, file)
     else:
-        print >>file, "%s%s  (%d)" % (prefix, p.name, p.size())
+        print("%s%s  (%d)" % (prefix, p.name, p.size()), file=file)
