@@ -1,5 +1,7 @@
 """Convenience functions.
 """
+from __future__ import print_function
+
 import sys
 
 # Package imports.
