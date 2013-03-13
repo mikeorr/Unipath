@@ -59,13 +59,20 @@ class AbstractPath(_base):
         if len(args) == 1 and isinstance(args[0], class_) and \
             args[0].pathlib == pathlib:
             return args[0]
-        legal_arg_types = (class_, basestring, list, int, long)
+        try:
+            legal_arg_types = (class_, basestring, list, int, long)
+        except NameError: # Python 3 doesn't have basestring nor long
+            legal_arg_types = (class_, str, list, int)
         args = list(args)
         for i, arg in enumerate(args):
             if not isinstance(arg, legal_arg_types):
                 m = "arguments must be str, unicode, list, int, long, or %s"
                 raise TypeError(m % class_.__name__)
-            if isinstance(arg, (int, long)):
+            try:
+                int_types = (int, long)
+            except NameError: # We are in Python 3
+                int_types = int
+            if isinstance(arg, int_types):
                 args[i] = str(arg)
             elif isinstance(arg, class_) and arg.pathlib != pathlib:
                 arg = getattr(arg, components)()   # Now a list.
