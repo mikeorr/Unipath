@@ -1,0 +1,6 @@
+distribute==0.6.34
+py==1.4.13
+pytest==2.3.4
+tox==1.4.3
+virtualenv==1.9.1
+wsgiref==0.1.2
