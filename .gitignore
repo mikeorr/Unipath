@@ -4,3 +4,4 @@ dist
 MANIFEST
 MANIFEST.in
 Unipath.egg-info
+.tox
