@@ -1,6 +1,6 @@
 """Convenience functions.
 """
-from __future__ import print_function
+from __future__ import print_function, generators
 
 import sys
 
@@ -11,7 +11,7 @@ def dict2dir(dir, dic, mode="w"):
     dir = FSPath(dir)
     if not dir.exists():
         dir.mkdir()
-    for filename, content in dic.iteritems():
+    for filename, content in dic.items():
         p = FSPath(dir, filename)
         if isinstance(content, dict):
             dict2dir(p, content)
