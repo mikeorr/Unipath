@@ -1,6 +1,6 @@
 from distutils.core import setup
 
-VERSION = "0.2.1"
+VERSION = "0.2.1-3"
 
 DESCRIPTION = """\
 Unipath is an object-oriented approach to file/pathname 
@@ -69,5 +69,12 @@ setup(
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.2",
+        "Programming Language :: Python :: 3.3"
         ],
     )
