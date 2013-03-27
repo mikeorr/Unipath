@@ -1,6 +1,6 @@
 from distutils.core import setup
 
-VERSION = "0.2.1-3"
+VERSION = "1.0b1"
 
 DESCRIPTION = """\
 Unipath is an object-oriented approach to file/pathname 
