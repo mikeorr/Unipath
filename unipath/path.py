@@ -283,6 +283,7 @@ class Path(AbstractPath):
             m = stat.S_IMODE(st.st_mode)
             os.chmod(dst, m)
 
+    # Undocumented, not implemented method.
     def copy_tree(dst, perserve_symlinks=False, times=False, perms=False):
         raise NotImplementedError()
         
