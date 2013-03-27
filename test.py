@@ -477,10 +477,11 @@ class TestStatAttributes(FilesystemTest):
         assert not self.missing.ismount()
 
     def test_times(self):
-        #TODO: Make this test runs correctly
-        assert self.a_file.atime() == 50000
-        assert self.a_file.ctime() == 50000
+        self.set_times()
         assert self.a_file.mtime() == 50000
+        assert self.a_file.atime() == 60000
+        # Can't set ctime to constant, so just make sure it returns a positive number.
+        assert self.a_file.ctime() > 0
 
     def test_size(self):
         assert self.chef.size() == 5
