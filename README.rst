@@ -1,16 +1,18 @@
-IMPORTANT: THIS FORK IS PYTHON 3 COMPATIBLE
-
-UNIPATH
+Unipath
 %%%%%%%
 
 An object-oriented approach to file/directory operations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:Version:           0.2.0 (2008-05-17)
-:Home page:         http://sluggo.scrapping.cc/python/unipath/
+:Version:           1.0
+:Home page:         https://github.com/mikeorr/Unipath
+:Docs:              https://github.com/mikeorr/Unipath#readme
 :Author:            Mike Orr <sluggoster@gmail.com>
 :License:           Python (http://www.python.org/psf/license)
-:Based on:          See HISTORY section below.
+:Based on:          path.py by Jason Orendorff, as modified for PEP 335
+                    by Reinhold Birkenfeld and Björn Lindkvist. Influenced by
+                    Noam Raphael's AlternativePathModule
+:Contributors:      Ricardo Duarte
 
 ..
     To format this document as HTML:
@@ -25,24 +27,21 @@ Unipath is an object-oriented front end to the file/directory functions
 scattered throughout several Python library modules.  It's based on Jason
 Orendorff's *path.py* but does not adhere as strictly to the underlying
 functions' syntax, in order to provide more user convenience and higher-level
-functionality.  It comes with a test suite.
+functionality. Unipath is stable, well-tested, and has been used in production
+since 2008.
 
-.. important::  Changes for Unipath 0.1.0 users
+Version 1.0 runs on Python 2.6, 2.7, 3.2, and 3.3. Older Python versions should
+stick to Unipath 0.2.
 
-    ``Path`` has been renamed to ``AbstractPath``, and ``FSPath`` to ``Path``.
-    ``FSPath`` remains as an alias for backward compatibility.
-    ``Path.symlink()`` is gone; use ``Path.write_link()`` instead.  (Note that
-    the argument order is the opposite.)  See CHANGES.txt for the complete list
-    of changes.
-
+Users may also want to consider 'pathlib' (PEP 428), a more recent path library
+which is being considered for inclusion in Python 3.4. It has a more modern
+API, and Unipath's author is evaluating it as a possible successor to Unipath.
+However, as of March 2013 pathlib's API is still in flux, it has not been
+widely tested yet, and it has fewer features than Unipath.
 
 The ``Path`` class encapsulates the file/directory operations in Python's
-``os``, ``os.path``, and ``shutil`` modules.
-
-Its superclass ``AbstractPath`` class encapsulates those operations which
-aren't dependent on the filesystem.  This is mainly an academic distinction to
-keep the code clean.  Since ``Path`` can do everything ``AbstractPath`` does,
-most users just use ``Path``.
+``os``, ``os.path``, and ``shutil`` modules. (Non-filesystem operations are in
+the ``AbstractPath`` superclass, but users can ignore this.)
 
 The API has been streamlined to focus on what the application developer wants
 to do rather than on the lowest-level operations; e.g., ``.mkdir()`` succeeds
@@ -60,12 +59,6 @@ Convenience methods:
   * ``.ancestor(N)`` returns the Nth parent directory, useful for joining paths.
   * ``.child(\*components)`` is a "safe" version of join.
   * ``.split_root()`` handles slash/drive/UNC absolute paths in a uniform way.
-
-- Optional high-level functions in the ``unipath.tools`` module.
-
-- For Python >= 2.4
-
-- Path objects are immutable so can be used as dictionary keys.
 
 Sample usage for pathname manipulation::
 
@@ -104,22 +97,25 @@ Sample usage for filesystem access::
     >>> p.exists()
     False
 
-The name "Unipath" is short for "universal path", as it grew out of a
-discussion on python-dev about the ideal path API for Python.
+Path objects subclass ``str`` (Python 2 ``unicode``), so they can be passed
+directly to fuctions expecting a string path. They are also immutable and can
+be used as dictionary keys.
 
-Unipath's API is mostly stable but there's no guarantee it won't change in
-future versions.
+The name "Unipath" is short for "universal path". It was originally intended to
+unify the competing path APIs as of PEP 334. When the PEP was rejected, Unipath
+added some convenience APIs.  The code is implemented in layers, with
+filesystem-dependent code in the ``Path`` class and filesystem-independent code
+in its ``AbstractPath`` superclass.
 
 
 Installation and testing
 ========================
-If you have EasyInstall, run "easy_install unipath".  Otherwise unpack the
-source and run "python setup.py install" in the top-level directory.
-You can also copy the "unipath" directory to somewhere on your Python
-path.
 
-To test the library you'll need the Nose package.  cd to the top-level
-directory and run "python unipath/test.py".
+Run "pip install Unipath".  Or to install the development version, check out
+the source from the Git repository above and run "python setup.py develop".
+
+To test the library, install 'pytest' and run "pytest test.py".  It also comes
+with a Tox INI file.
 
 
 Path and AbstractPath objects
@@ -317,7 +313,6 @@ Calculating paths
 
 Listing directories
 -------------------
-*These methods are experimental and subject to change.*
 
 .listdir(pattern=None, filter=ALL, names_only=False)
     Return the filenames in this directory.
@@ -467,13 +462,6 @@ High-level operations
     Copy the access/modification times and/or the permission bits from this
     path to another path.
 
-.copy_tree(dst, preserve_symlinks=False, times=False, perms=False)
-    Recursively copy a directory tree to 'dst'.  'dst' must not exist; it will
-    be created along with any missing ancestors.  If 'symlinks' is true,
-    symbolic links will be recreated with the same path (absolute or relative);
-    otherwise the links will be followed.  'times' and 'perms' are same as
-    ``.copy_stat()``.  *This method is not implemented yet.*
-
 .move(dst)
     Recursively move a file or directory to another location.  This uses
     .rename() if possible.
@@ -525,63 +513,13 @@ dump_path(path, prefix="", tab="    ", file=None)  =>  None
     dump a path.
 
 
-Non-native paths
-================
+Acknowledgments
+===============
 
-If you want to make Windows-style paths on Unix or vice-versa, you can 
-subclass ``AbstractPath`` and set the ``pathlib`` class attribute to one of
-Python's OS-specific path modules (``posixpath`` or ``ntpath``) or a 
-third-party equivalent.  To convert from one syntax to another, pass the path
-object to the other constructor.
-
-This is not practical with ``Path`` because the OS will reject or misinterpret
-non-native paths.
-
-History
-=======
-2004-03-07
-    Released as path.py by Jason Orendorff <jason@jorendorff.com>.
-    That version is a subclass of unicode and combines methods from
-    os.path, os, and shutil, and includes globbing features.
-    Other contributors are listed in the source.
-
-    - http://www.jorendorff.com/articles/python/path
-    
-2005-07
-    Modified by Reinhold Birkenfeld in preparation for a Python PEP.
-    Convert all filesystem-accessing properties to methods, rename stuff, and
-    use self.__class__ instead of hardwired constructor to aid subclassing.
-    Source was in Python CVS in the "sandbox" section but I can't find it in 
-    the current Subversion repository; was it deleted?  What's the incantation
-    to bring it back?
-
-2006-01
-    Modified by Bj�rn Lindqvist <bjourne@gmail.com> for PEP 355.
-    Replace .joinpath() with a multi-argument constructor.
-
-    - overview:  http://www.python.org/dev/peps/pep-0355/
-    - code:  http://wiki.python.org/moin/PathModule
-    
-2006
-    Influenced by Noam Raphael's alternative path module.  This subclasses
-    tuple rather than unicode, representing a tuple of directory components a
-    la ``tuple(os.path.splitall("a/b"))``. The discussion covers several design
-    decisions and open issues.
-
-    - overview:  http://wiki.python.org/moin/AlternativePathClass
-    - code:  http://wiki.python.org/moin/AlternativePathModule
-    - discussion:  http://wiki.python.org/moin/AlternativePathDiscussion
-
-2007-01
-    Renamed unipath and modified by Mike Orr <sluggoster@gmail.com>.
-    Move filesystem operations into a subclass FSPath.  Add and rename methods
-    and properties.  Influenced by these mailing-list threads:
-
-    - @@MO coming soon
-
-2008-05
-    Released version 0.2.0.  Renamed ``Path`` to ``AbstractPath``, and
-    ``FSPath`` to ``Path``.
+Jason Orendorff wrote the original path.py.  Reinhold Birkenfeld and
+Björn Lindkvist modified it for Python PEP 335. Mike Orr changed the API and
+released it as Unipath.  Ricardo Duarte ported it to Python 3, changed the
+tests to py.test, and added Tox support.
 
 Comparision with os/os.path/shutil and path.py
 ==============================================
@@ -592,7 +530,7 @@ Comparision with os/os.path/shutil and path.py
     - = not implemented
 
 Functions are listed in the same order as the Python Library Reference, version
-2.5.  (Sorry the table is badly formatted.)
+2.5.  (Does not reflect later changes to Python or path.py.)
 
 ::
 

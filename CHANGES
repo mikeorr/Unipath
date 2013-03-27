@@ -6,6 +6,7 @@
 * Convert tests to py.test. (Ricardo Duarte)
 * Delete old PEP 335 reference documentation. To recover, check out Git rev
   7575cdf, directory "doc/reference".
+* Undocument ``Path.copy_tree()``. It was never implemented.
 
 0.2.1 (released 2008-05-19 by MSO)
 ----------------------------------
