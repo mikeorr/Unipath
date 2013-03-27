@@ -1,18 +1,17 @@
 """Convenience functions.
 """
-from __future__ import print_function, generators
 
+from __future__ import print_function, generators
 import sys
 
-# Package imports.
-from unipath import Path, FSPath
+from unipath import AbstractPath, Path
 
 def dict2dir(dir, dic, mode="w"):
-    dir = FSPath(dir)
+    dir = Path(dir)
     if not dir.exists():
         dir.mkdir()
     for filename, content in dic.items():
-        p = FSPath(dir, filename)
+        p = Path(dir, filename)
         if isinstance(content, dict):
             dict2dir(p, content)
             continue
@@ -23,7 +22,7 @@ def dict2dir(dir, dic, mode="w"):
 def dump_path(path, prefix="", tab="    ", file=None):
     if file is None:
         file = sys.stdout
-    p = Path(path)
+    p = AbstractPath(path)
     if   p.islink():
         print("%s%s -> %s" % (prefix, p.name, p.read_link()), file=file)
     elif p.isdir():
