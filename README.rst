@@ -654,6 +654,7 @@ Functions are listed in the same order as the Python Library Reference, version
 
 
 .. [1] The Python method is too dumb; it can end a prefix in the middle of a
+       [The rest of this footnote has been lost.]
 .. [2] Closest equivalent is ``p.split_root()`` for approximate equivalent.
 .. [3] More convenient alternatives exist.
 .. [4] Inconvenient constants; not used enough to port.
@@ -661,8 +662,8 @@ Functions are listed in the same order as the Python Library Reference, version
    dangerous.
 .. [6] Ownership of symbolic link doesn't matter because the OS never 
    consults its permission bits.
-.. [7]_ ``os.tempnam`` is insecure; use ``os.tmpfile`` or ``tempfile`` module
+.. [7] ``os.tempnam`` is insecure; use ``os.tmpfile`` or ``tempfile`` module
    instead.
-.. [8]_ ``os.path.splitext(os.path.split(p))[0]``
-.. [9]_ ``os.path.splitext(os.path.split(p))[1]``
-.. [10]_ Closest equivalent is ``p.split_root()[0]``.
+.. [8] ``os.path.splitext(os.path.split(p))[0]``
+.. [9] ``os.path.splitext(os.path.split(p))[1]``
+.. [10] Closest equivalent is ``p.split_root()[0]``.

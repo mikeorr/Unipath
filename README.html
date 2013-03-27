@@ -345,39 +345,39 @@ rst2html.py README.txt README.html -->
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#introduction" id="id7">Introduction</a></li>
-<li><a class="reference internal" href="#installation-and-testing" id="id8">Installation and testing</a></li>
-<li><a class="reference internal" href="#path-and-abstractpath-objects" id="id9">Path and AbstractPath objects</a><ul>
-<li><a class="reference internal" href="#constructor" id="id10">Constructor</a></li>
-<li><a class="reference internal" href="#normalization" id="id11">Normalization</a></li>
-<li><a class="reference internal" href="#properties" id="id12">Properties</a></li>
-<li><a class="reference internal" href="#methods" id="id13">Methods</a></li>
+<li><a class="reference internal" href="#introduction" id="id11">Introduction</a></li>
+<li><a class="reference internal" href="#installation-and-testing" id="id12">Installation and testing</a></li>
+<li><a class="reference internal" href="#path-and-abstractpath-objects" id="id13">Path and AbstractPath objects</a><ul>
+<li><a class="reference internal" href="#constructor" id="id14">Constructor</a></li>
+<li><a class="reference internal" href="#normalization" id="id15">Normalization</a></li>
+<li><a class="reference internal" href="#properties" id="id16">Properties</a></li>
+<li><a class="reference internal" href="#methods" id="id17">Methods</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#path-objects-only" id="id14">Path objects only</a><ul>
-<li><a class="reference internal" href="#note-on-arguments" id="id15">Note on arguments</a></li>
-<li><a class="reference internal" href="#current-directory" id="id16">Current directory</a></li>
-<li><a class="reference internal" href="#calculating-paths" id="id17">Calculating paths</a></li>
-<li><a class="reference internal" href="#listing-directories" id="id18">Listing directories</a></li>
-<li><a class="reference internal" href="#file-attributes-and-permissions" id="id19">File attributes and permissions</a></li>
-<li><a class="reference internal" href="#modifying-paths" id="id20">Modifying paths</a><ul>
-<li><a class="reference internal" href="#creating-renaming-removing" id="id21">Creating/renaming/removing</a></li>
-<li><a class="reference internal" href="#symbolic-and-hard-links" id="id22">Symbolic and hard links</a></li>
+<li><a class="reference internal" href="#path-objects-only" id="id18">Path objects only</a><ul>
+<li><a class="reference internal" href="#note-on-arguments" id="id19">Note on arguments</a></li>
+<li><a class="reference internal" href="#current-directory" id="id20">Current directory</a></li>
+<li><a class="reference internal" href="#calculating-paths" id="id21">Calculating paths</a></li>
+<li><a class="reference internal" href="#listing-directories" id="id22">Listing directories</a></li>
+<li><a class="reference internal" href="#file-attributes-and-permissions" id="id23">File attributes and permissions</a></li>
+<li><a class="reference internal" href="#modifying-paths" id="id24">Modifying paths</a><ul>
+<li><a class="reference internal" href="#creating-renaming-removing" id="id25">Creating/renaming/removing</a></li>
+<li><a class="reference internal" href="#symbolic-and-hard-links" id="id26">Symbolic and hard links</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#high-level-operations" id="id23">High-level operations</a></li>
+<li><a class="reference internal" href="#high-level-operations" id="id27">High-level operations</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#tools" id="id24">Tools</a><ul>
-<li><a class="reference internal" href="#dict2dir" id="id25">dict2dir</a></li>
+<li><a class="reference internal" href="#tools" id="id28">Tools</a><ul>
+<li><a class="reference internal" href="#dict2dir" id="id29">dict2dir</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#acknowledgments" id="id26">Acknowledgments</a></li>
-<li><a class="reference internal" href="#comparision-with-os-os-path-shutil-and-path-py" id="id27">Comparision with os/os.path/shutil and path.py</a></li>
+<li><a class="reference internal" href="#acknowledgments" id="id30">Acknowledgments</a></li>
+<li><a class="reference internal" href="#comparision-with-os-os-path-shutil-and-path-py" id="id31">Comparision with os/os.path/shutil and path.py</a></li>
 </ul>
 </div>
 <div class="section" id="introduction">
-<h1><a class="toc-backref" href="#id7">Introduction</a></h1>
+<h1><a class="toc-backref" href="#id11">Introduction</a></h1>
 <p>Unipath is an object-oriented front end to the file/directory functions
 scattered throughout several Python library modules.  It's based on Jason
 Orendorff's <em>path.py</em> but does not adhere as strictly to the underlying
@@ -459,16 +459,16 @@ filesystem-dependent code in the <tt class="docutils literal">Path</tt> class an
 in its <tt class="docutils literal">AbstractPath</tt> superclass.</p>
 </div>
 <div class="section" id="installation-and-testing">
-<h1><a class="toc-backref" href="#id8">Installation and testing</a></h1>
+<h1><a class="toc-backref" href="#id12">Installation and testing</a></h1>
 <p>Run &quot;pip install Unipath&quot;.  Or to install the development version, check out
 the source from the Git repository above and run &quot;python setup.py develop&quot;.</p>
 <p>To test the library, install 'pytest' and run &quot;pytest test.py&quot;.  It also comes
 with a Tox INI file.</p>
 </div>
 <div class="section" id="path-and-abstractpath-objects">
-<h1><a class="toc-backref" href="#id9">Path and AbstractPath objects</a></h1>
+<h1><a class="toc-backref" href="#id13">Path and AbstractPath objects</a></h1>
 <div class="section" id="constructor">
-<h2><a class="toc-backref" href="#id10">Constructor</a></h2>
+<h2><a class="toc-backref" href="#id14">Constructor</a></h2>
 <p><tt class="docutils literal">Path</tt> (and <tt class="docutils literal">AbstractPath</tt>) objects can be created from a string path, or
 from several string arguments which are joined together a la <tt class="docutils literal">os.path.join</tt>.
 Each argument can be a string, an <tt class="docutils literal">(Abstract)Path</tt> instance, an int or long,
@@ -493,7 +493,7 @@ again. A future version will probably override these methods to return paths.
 Multiplying a path returns a string, as if you'd ever want to do that.</p>
 </div>
 <div class="section" id="normalization">
-<h2><a class="toc-backref" href="#id11">Normalization</a></h2>
+<h2><a class="toc-backref" href="#id15">Normalization</a></h2>
 <p>The new path is normalized to clean up redundant &quot;..&quot; and &quot;.&quot; in the
 middle, double slashes, wrong-direction slashes, etc.  On
 case-insensitive filesystems it also converts uppercase to lowercase.
@@ -519,7 +519,7 @@ constructor.  You can also call <tt class="docutils literal">.norm()</tt> anytim
 path.</p>
 </div>
 <div class="section" id="properties">
-<h2><a class="toc-backref" href="#id12">Properties</a></h2>
+<h2><a class="toc-backref" href="#id16">Properties</a></h2>
 <p>Path objects have the following properties:</p>
 <dl class="docutils">
 <dt>.parent</dt>
@@ -535,7 +535,7 @@ path.</p>
 <p>Examples are given in the first sample usage above.</p>
 </div>
 <div class="section" id="methods">
-<h2><a class="toc-backref" href="#id13">Methods</a></h2>
+<h2><a class="toc-backref" href="#id17">Methods</a></h2>
 <p>Path objects have the following methods:</p>
 <dl class="docutils">
 <dt>.ancestor(N)</dt>
@@ -611,13 +611,13 @@ Python's <tt class="docutils literal">ntpath.isabs()</tt> would return false.</p
 </div>
 </div>
 <div class="section" id="path-objects-only">
-<h1><a class="toc-backref" href="#id14">Path objects only</a></h1>
+<h1><a class="toc-backref" href="#id18">Path objects only</a></h1>
 <div class="section" id="note-on-arguments">
-<h2><a class="toc-backref" href="#id15">Note on arguments</a></h2>
+<h2><a class="toc-backref" href="#id19">Note on arguments</a></h2>
 <p>All arguments that take paths can also take strings.</p>
 </div>
 <div class="section" id="current-directory">
-<h2><a class="toc-backref" href="#id16">Current directory</a></h2>
+<h2><a class="toc-backref" href="#id20">Current directory</a></h2>
 <dl class="docutils">
 <dt>Path.cwd()</dt>
 <dd>Return the actual current directory; e.g., Path(&quot;/tmp/my_temp_dir&quot;).
@@ -627,7 +627,7 @@ This is a class method.</dd>
 </dl>
 </div>
 <div class="section" id="calculating-paths">
-<h2><a class="toc-backref" href="#id17">Calculating paths</a></h2>
+<h2><a class="toc-backref" href="#id21">Calculating paths</a></h2>
 <dl class="docutils">
 <dt>.resolve()</dt>
 <dd>Return the equivalent path without any symbolic links.  This normalizes
@@ -645,8 +645,7 @@ different drive, this returns the original path unchanged.</dd>
 </dl>
 </div>
 <div class="section" id="listing-directories">
-<h2><a class="toc-backref" href="#id18">Listing directories</a></h2>
-<p><em>These methods are experimental and subject to change.</em></p>
+<h2><a class="toc-backref" href="#id22">Listing directories</a></h2>
 <dl class="docutils">
 <dt>.listdir(pattern=None, filter=ALL, names_only=False)</dt>
 <dd><p class="first">Return the filenames in this directory.</p>
@@ -682,7 +681,7 @@ the items in them.  If false, yield the items first.</p>
 </blockquote>
 </div>
 <div class="section" id="file-attributes-and-permissions">
-<h2><a class="toc-backref" href="#id19">File attributes and permissions</a></h2>
+<h2><a class="toc-backref" href="#id23">File attributes and permissions</a></h2>
 <dl class="docutils">
 <dt>.atime()</dt>
 <dd>Return the path's last access time.</dd>
@@ -719,9 +718,9 @@ supports it.  See <tt class="docutils literal">os.statvfs()</tt> for details.</d
 </dl>
 </div>
 <div class="section" id="modifying-paths">
-<h2><a class="toc-backref" href="#id20">Modifying paths</a></h2>
+<h2><a class="toc-backref" href="#id24">Modifying paths</a></h2>
 <div class="section" id="creating-renaming-removing">
-<h3><a class="toc-backref" href="#id21">Creating/renaming/removing</a></h3>
+<h3><a class="toc-backref" href="#id25">Creating/renaming/removing</a></h3>
 <dl class="docutils">
 <dt>.chmod(mode)</dt>
 <dd>Change the path's permissions.  'mode' is octal; e.g., 0777.</dd>
@@ -749,7 +748,7 @@ as 'mtime'.  To set the times based on another file, see <tt class="docutils lit
 </dl>
 </div>
 <div class="section" id="symbolic-and-hard-links">
-<h3><a class="toc-backref" href="#id22">Symbolic and hard links</a></h3>
+<h3><a class="toc-backref" href="#id26">Symbolic and hard links</a></h3>
 <dl class="docutils">
 <dt>.hardlink(src)</dt>
 <dd>Create a hard link at 'src' pointing to self.</dd>
@@ -766,7 +765,7 @@ or is a even a valid path for the filesystem.</dd>
 </div>
 </div>
 <div class="section" id="high-level-operations">
-<h2><a class="toc-backref" href="#id23">High-level operations</a></h2>
+<h2><a class="toc-backref" href="#id27">High-level operations</a></h2>
 <dl class="docutils">
 <dt>.copy(dst, times=False, perms=False)</dt>
 <dd>Copy the file to a destination.  'times' and 'perms' are same as for
@@ -797,10 +796,10 @@ before calling this.</dd>
 </div>
 </div>
 <div class="section" id="tools">
-<h1><a class="toc-backref" href="#id24">Tools</a></h1>
+<h1><a class="toc-backref" href="#id28">Tools</a></h1>
 <p>The following functions are in the <tt class="docutils literal">unipath.tools</tt> module.</p>
 <div class="section" id="dict2dir">
-<h2><a class="toc-backref" href="#id25">dict2dir</a></h2>
+<h2><a class="toc-backref" href="#id29">dict2dir</a></h2>
 <p>dict2dir(dir, dic, mode=&quot;w&quot;)  =&gt;  None</p>
 <blockquote>
 Create a directory that matches the dict spec.  String values are turned
@@ -822,14 +821,14 @@ dump a path.</p>
 </div>
 </div>
 <div class="section" id="acknowledgments">
-<h1><a class="toc-backref" href="#id26">Acknowledgments</a></h1>
+<h1><a class="toc-backref" href="#id30">Acknowledgments</a></h1>
 <p>Jason Orendorff wrote the original path.py.  Reinhold Birkenfeld and
 Björn Lindkvist modified it for Python PEP 335. Mike Orr changed the API and
 released it as Unipath.  Ricardo Duarte ported it to Python 3, changed the
 tests to py.test, and added Tox support.</p>
 </div>
 <div class="section" id="comparision-with-os-os-path-shutil-and-path-py">
-<h1><a class="toc-backref" href="#id27">Comparision with os/os.path/shutil and path.py</a></h1>
+<h1><a class="toc-backref" href="#id31">Comparision with os/os.path/shutil and path.py</a></h1>
 <pre class="literal-block">
 p = any path, f =  file, d = directory, l = link
 fsp, fsf, fsd, fsl = filesystem path (i.e., ``Path`` only)
@@ -959,7 +958,8 @@ os.path.splitdrive(p)[0] p.drive        -                  [2]_
 <table class="docutils footnote" frame="void" id="id1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[1]</td><td>The Python method is too dumb; it can end a prefix in the middle of a</td></tr>
+<tr><td class="label">[1]</td><td>The Python method is too dumb; it can end a prefix in the middle of a
+[The rest of this footnote has been lost.]</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
@@ -994,11 +994,31 @@ dangerous.</td></tr>
 consults its permission bits.</td></tr>
 </tbody>
 </table>
-<!-- [7]_ ``os.tempnam`` is insecure; use ``os.tmpfile`` or ``tempfile`` module
-instead. -->
-<!-- [8]_ ``os.path.splitext(os.path.split(p))[0]`` -->
-<!-- [9]_ ``os.path.splitext(os.path.split(p))[1]`` -->
-<!-- [10]_ Closest equivalent is ``p.split_root()[0]``. -->
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[7]</td><td><tt class="docutils literal">os.tempnam</tt> is insecure; use <tt class="docutils literal">os.tmpfile</tt> or <tt class="docutils literal">tempfile</tt> module
+instead.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[8]</td><td><tt class="docutils literal"><span class="pre">os.path.splitext(os.path.split(p))[0]</span></tt></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[9]</td><td><tt class="docutils literal"><span class="pre">os.path.splitext(os.path.split(p))[1]</span></tt></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[10]</td><td>Closest equivalent is <tt class="docutils literal"><span class="pre">p.split_root()[0]</span></tt>.</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 </body>
