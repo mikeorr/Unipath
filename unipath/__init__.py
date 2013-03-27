@@ -1,13 +1,4 @@
 """unipath.py - A two-class approach to file/directory operations in Python.
-
-Full usage, documentation, changelog, and history are at
-http://sluggo.scrapping.cc/python/unipath/
-
-(c) 2007 by Mike Orr (and others listed in "History" section of doc page).
-Permission is granted to redistribute, modify, and include in commercial and
-noncommercial products under the terms of the Python license (i.e., the "Python
-Software Foundation License version 2" at 
-http://www.python.org/download/releases/2.5/license/).
 """
 
 from unipath.abstractpath import AbstractPath
