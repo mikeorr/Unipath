@@ -1,6 +1,11 @@
-1.0 (unreleased)
-----------------
+1.0b1 (unreleased)
+------------------
 * Migrate repository to Git and Github. (https://github.com/mikeorr/Unipath)
+* Supports Python 2.6, 2.7, 3.2, and 3.3.  No longer suppots Python 2.5 or older.
+* Python 3 compatibility. (Ricardo Duarte)
+* Convert tests to py.test. (Ricardo Duarte)
+* Delete old PEP 335 reference documentation. To recover, check out Git rev
+  7575cdf, directory "doc/reference".
 
 0.2.1 (released 2008-05-19 by MSO)
 ----------------------------------
