@@ -222,7 +222,7 @@ class Path(AbstractPath):
             os.rmdir(self)
 
     def remove(self):
-        if self.exists():
+        if self.lexists():
             os.remove(self)
 
     def rename(self, new, parents=False):
@@ -315,7 +315,7 @@ class Path(AbstractPath):
            doesn't exist, do nothing.
            If you're looking for a 'rmtree' method, this is what you want.
         """
-        if self.isfile():
+        if self.isfile() or self.islink():
            os.remove(self)
         elif self.isdir():
            shutil.rmtree(self)

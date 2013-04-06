@@ -22,7 +22,6 @@ import sys
 
 import pytest
 
-# Package imports
 from unipath import *
 from unipath.errors import *
 from unipath.tools import dict2dir, dump_path
@@ -324,9 +323,8 @@ class TestListingDirectories(FilesystemTest):
         ]
         assert result == control
 
+    @pytest.mark.skipif("not hasattr(os, 'symlink')")
     def test_listdir_links(self):
-        if not hasattr(self.d, "symlink"):
-            return
         result = Path("").listdir(filter=LINKS)
         control = [
             "dead_link",
@@ -532,6 +530,23 @@ class TestCreateRenameRemove(FilesystemTest):
         self.a_file.remove()
         assert not self.a_file.exists()
         self.missing.remove()  # Removing a nonexistent file should succeed.
+
+    if hasattr(os, 'symlink'):
+        @pytest.mark.skipif("not hasattr(os, 'symlink')")
+        def test_remove_broken_symlink(self):
+            symlink = Path(self.d, "symlink")
+            symlink.write_link("broken")
+            assert symlink.lexists()
+            symlink.remove()
+            assert not symlink.lexists()
+
+        @pytest.mark.skipif("not hasattr(os, 'symlink')")
+        def test_rmtree_broken_symlink(self):
+            symlink = Path(self.d, "symlink")
+            symlink.write_link("broken")
+            assert symlink.lexists()
+            symlink.rmtree()
+            assert not symlink.lexists()
 
     def test_rename(self):
         a_file = self.a_file

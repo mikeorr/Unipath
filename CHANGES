@@ -7,6 +7,7 @@
 * Delete old PEP 335 reference documentation. To recover, check out Git rev
   7575cdf, directory "doc/reference".
 * Undocument ``Path.copy_tree()``. It was never implemented.
+* Fix Path.remove and Path.rmtree for symlinks. (Joel Rosdahl)
 
 0.2.1 (released 2008-05-19 by MSO)
 ----------------------------------
