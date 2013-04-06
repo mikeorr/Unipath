@@ -35,9 +35,9 @@ stick to Unipath 0.2.
 
 Users may also want to consider 'pathlib' (PEP 428), a more recent path library
 which is being considered for inclusion in Python 3.4. It has a more modern
-API, and Unipath's author is evaluating it as a possible successor to Unipath.
-However, as of March 2013 pathlib's API is still in flux, it has not been
-widely tested yet, and it has fewer features than Unipath.
+API, and I'm evaluating it as a potential successor to Unipath.  However, as of
+March 2013 pathlib's API is still in flux, it has not been widely tested yet,
+and it has fewer features than Unipath.
 
 The ``Path`` class encapsulates the file/directory operations in Python's
 ``os``, ``os.path``, and ``shutil`` modules. (Non-filesystem operations are in
