@@ -63,6 +63,9 @@ class TestPathConstructor(object):
         assert str(NTPath()) == "."
         assert str(NTPath("foo", 1, "bar")) == r"foo\1\bar"
 
+    def test_int_arg(self):
+        assert str(PosixPath("a", 1)) == "a/1"
+
 
 class TestNorm(object):
     def test_posix(self):
