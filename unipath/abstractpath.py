@@ -2,13 +2,21 @@
 """
 
 import os
+import sys
 
 from unipath.errors import UnsafePathError
 
 __all__ = ["AbstractPath"]
 
+PY3 = sys.version_info[0] == 3
+
+if PY3:
+    unicode_type = str
+else:
+    unicode_type = unicode
+
 # Use unicode strings if possible
-_base = os.path.supports_unicode_filenames and unicode or str
+_base = os.path.supports_unicode_filenames and unicode_type or str
 
 class AbstractPath(_base):
     """An object-oriented approach to os.path functions."""
@@ -39,7 +47,7 @@ class AbstractPath(_base):
         if resultStr is NotImplemented:
             return resultStr
         return self.__class__(resultStr)
- 
+
     @classmethod
     def _new_helper(class_, args):
         pathlib = class_.pathlib
@@ -76,7 +84,7 @@ class AbstractPath(_base):
             if isinstance(arg, list):
                 args[i] = pathlib.join(*arg)
         return pathlib.join(*args)
-        
+
     def __repr__(self):
         return '%s(%r)' % (self.__class__.__name__, _base(self))
 
@@ -85,10 +93,10 @@ class AbstractPath(_base):
 
     def expand_user(self):
         return self.__class__(self.pathlib.expanduser(self))
-    
+
     def expand_vars(self):
         return self.__class__(self.pathlib.expandvars(self))
-    
+
     def expand(self):
         """ Clean up a filename by calling expandvars(),
         expanduser(), and norm() on it.
@@ -109,21 +117,21 @@ class AbstractPath(_base):
            Example: Path('/usr/lib/libpython.so').parent => Path('/usr/lib')
         """
         return self.__class__(self.pathlib.dirname(self))
-    
+
     @property
     def name(self):
         """The final component of the path.
            Example: path('/usr/lib/libpython.so').name => Path('libpython.so')
         """
         return self.__class__(self.pathlib.basename(self))
-    
+
     @property
     def stem(self):
         """Same as path.name but with one file extension stripped off.
            Example: path('/home/guido/python.tar.gz').stem => Path('python.tar')
         """
         return self.__class__(self.pathlib.splitext(self.name)[0])
-    
+
     @property
     def ext(self):
         """The file extension, for example '.py'."""
@@ -203,7 +211,7 @@ class AbstractPath(_base):
                 msg = "arg '%s' is parent directory specifier '%s'"
                 tup = child, self.pathlib.pardir
                 raise UnsafePathError(msg % tup)
-            if child == self.pathlib.curdir:    
+            if child == self.pathlib.curdir:
                 msg = "arg '%s' is current directory specifier '%s'"
                 tup = child, self.pathlib.curdir
                 raise UnsafePathError(msg % tup)
@@ -212,10 +220,10 @@ class AbstractPath(_base):
 
     def norm_case(self):
         return self.__class__(self.pathlib.normcase(self))
-    
+
     def isabsolute(self):
         """True if the path is absolute.
-           Note that we consider a Windows drive-relative path ("C:foo") 
+           Note that we consider a Windows drive-relative path ("C:foo")
            absolute even though ntpath.isabs() considers it relative.
         """
         return bool(self.split_root()[0])

@@ -38,7 +38,7 @@ class NTPath(AbstractPath):
 # Global flags
 cleanup = not bool(os.environ.get("NO_CLEANUP"))
 dump = bool(os.environ.get("DUMP"))
-        
+
 
 class TestPathConstructor(object):
     def test_posix(self):
@@ -189,7 +189,7 @@ class FilesystemTest(object):
     }
 
     def setup_method(self, method):
-        self.d = d = Path(tempfile.mkdtemp())
+        self.d = d = Path(os.path.realpath(tempfile.mkdtemp()))
         dict2dir(d, self.TEST_HIERARCHY)
         self.a_file = Path(d, "a_file")
         self.animals = Path(d, "animals")
@@ -603,7 +603,3 @@ class TestHighLevel(FilesystemTest):
         assert self.chef.read_file() == "bork!"
 
     # .write_file and .rmtree tested in .setUp.
-
-
-
-        
