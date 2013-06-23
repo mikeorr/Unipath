@@ -128,7 +128,7 @@ class Path(AbstractPath):
         return ret
 
     def walk(self, pattern=None, filter=None, top_down=True):
-        return self._walk(pattern, filter, top_down=top_down, set())
+        return self._walk(pattern, filter, top_down=top_down, seen=set())
 
     def _walk(self, pattern, filter, top_down, seen):
         if not self.isdir():
