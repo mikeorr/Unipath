@@ -154,7 +154,10 @@ class Path(AbstractPath):
     lexists = os.path.lexists
 
     isfile = os.path.isfile
-    isdir = os.path.isdir
+    
+    def isdir(self):
+        return os.path.isdir(self)
+    
     islink = os.path.islink
     ismount = os.path.ismount
 
