@@ -7,6 +7,12 @@ from unipath.errors import UnsafePathError
 
 __all__ = ["AbstractPath"]
 
+# Python3 compatability
+try:
+    unicode = unicode
+except NameError: # Python3 or no "unicode" support
+    unicode = str
+
 # Use unicode strings if possible
 _base = os.path.supports_unicode_filenames and unicode or str
 
