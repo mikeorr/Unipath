@@ -2,13 +2,20 @@
 """
 
 import os
+import sys
 
 from unipath.errors import UnsafePathError
 
 __all__ = ["AbstractPath"]
 
 # Use unicode strings if possible
-_base = os.path.supports_unicode_filenames and unicode or str
+
+# fix .. unicode compatibility with Python3
+if sys.version_info >= (3, 0):
+    _base = os.path.supports_unicode_filenames and str
+else:
+    _base = os.path.supports_unicode_filenames and unicode or str
+
 
 class AbstractPath(_base):
     """An object-oriented approach to os.path functions."""
