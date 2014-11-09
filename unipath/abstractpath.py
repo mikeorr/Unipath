@@ -40,6 +40,11 @@ class AbstractPath(_base):
             return resultStr
         return self.__class__(resultStr)
 
+    def __div__(self, path):
+        if path == '..':
+            return self.parent
+        return self.child(path)
+
     @classmethod
     def _new_helper(class_, args):
         pathlib = class_.pathlib
