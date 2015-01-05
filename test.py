@@ -198,7 +198,10 @@ class FilesystemTest(object):
     }
 
     def setup_method(self, method):
-        self.d = d = Path(tempfile.mkdtemp())
+        d = tempfile.mkdtemp()
+        d = os.path.realpath(d)  # MacOSX temp dir contains symlink.
+        d = Path(d)
+        self.d = d
         dict2dir(d, self.TEST_HIERARCHY)
         self.a_file = Path(d, "a_file")
         self.animals = Path(d, "animals")
