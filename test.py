@@ -16,6 +16,7 @@ from __future__ import print_function
 import ntpath
 import os
 import posixpath
+import re
 import tempfile
 import time
 import sys
@@ -94,9 +95,17 @@ class TestNorm(object):
 
 
 class TestAbstractPath(object):
-    def test_repr(self):
-        assert repr(Path("la_la_la")) == "Path('la_la_la')"
-        assert repr(NTPath("la_la_la")) == "NTPath('la_la_la')"
+    def test_repr_native(self):
+        # Don't bother testing whether 'u' prefix appears.
+        rx = re.compile( r"^Path\(u?'la_la_la'\)$" )
+        s = repr(Path("la_la_la"))
+        assert rx.match(s)
+
+    def test_repr_nt(self):
+        # Don't bother testing whether 'u' prefix appears.
+        rx = re.compile( r"^NTPath\(u?'la_la_la'\)$" )
+        s = repr(NTPath("la_la_la"))
+        assert rx.match(s)
 
     # Not testing expand_user, expand_vars, or expand: too dependent on the
     # OS environment.

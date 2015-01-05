@@ -7,8 +7,13 @@ from unipath.errors import UnsafePathError
 
 __all__ = ["AbstractPath"]
 
-# Use unicode strings if possible
-_base = os.path.supports_unicode_filenames and unicode or str
+# Use unicode strings if possible.
+_base = str               # Python 3 str (=unicode), or Python 2 bytes.
+if os.path.supports_unicode_filenames:
+    try:
+        _base = unicode   # Python 2 unicode.
+    except NameError:
+        pass
 
 class AbstractPath(_base):
     """An object-oriented approach to os.path functions."""

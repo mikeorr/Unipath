@@ -1,3 +1,8 @@
+1.1 (unreleased)
+----------------
+* Fix unicode NameError on Python 3. (Appeared only on OSes with unicode
+  paths.)(Thanks to Hanlle Nicolas, Aaron Lelevier, Dmitry Dygalo.)
+
 1.0 (2013-04-05)
 ------------------
 * Migrate repository to Git and Github. (https://github.com/mikeorr/Unipath)
