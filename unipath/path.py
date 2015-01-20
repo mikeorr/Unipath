@@ -294,6 +294,8 @@ class Path(AbstractPath):
         move = shutil.move
         
     def needs_update(self, others):
+        if not isinstance(others, (list, tuple)):
+            others = [others]
         if not self.exists():
             return True
         control = self.mtime()

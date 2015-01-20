@@ -611,6 +611,11 @@ class TestHighLevel(FilesystemTest):
         result = self.a_file.needs_update(self.images.listdir())
         assert self.a_file.needs_update(control_files)
 
+    def test_needs_update_scalar(self):
+        control_files = self.images.listdir()
+        self.a_file.set_times()
+        assert not self.a_file.needs_update(control_files[0])
+
     def test_read_file(self):
         assert self.chef.read_file() == "bork!"
 

@@ -5,6 +5,7 @@
 * Fix test on MacOSX: temp dir contains symlink. (wrightmx)
 * Fix ``walk`` error in arg ``top_down``. (Gabriel Reyla == sesas)
 * Fix ``isdir()`` issue on Windows. (Gabriel Reyla)
+* Fix ``needs_update`` with string argument. (#15)
 
 1.0 (2013-04-05)
 ------------------
