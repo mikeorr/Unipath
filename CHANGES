@@ -3,6 +3,8 @@
 * Fix unicode NameError on Python 3. (Appeared only on OSes with unicode
   paths.)(Thanks to Hanlle Nicolas, Aaron Lelevier, Dmitry Dygalo.)
 * Fix test on MacOSX: temp dir contains symlink. (wrightmx)
+* Fix ``walk`` error in arg ``top_down``. (Gabriel Reyla == sesas)
+* Fix ``isdir()`` issue on Windows. (Gabriel Reyla)
 
 1.0 (2013-04-05)
 ------------------
