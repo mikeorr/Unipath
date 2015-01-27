@@ -1,6 +1,10 @@
+*.egg
+*.egg-info
 *.pyc
 build
 dist
+docs/_build
+docs/_themes
 MANIFEST
-Unipath.egg-info
+.coverage
 .tox
