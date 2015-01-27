@@ -4,7 +4,7 @@
 from __future__ import print_function, generators
 import sys
 
-from unipath import AbstractPath, Path
+from unipath import Path
 
 def dict2dir(dir, dic, mode="w"):
     dir = Path(dir)
@@ -22,7 +22,7 @@ def dict2dir(dir, dic, mode="w"):
 def dump_path(path, prefix="", tab="    ", file=None):
     if file is None:
         file = sys.stdout
-    p = AbstractPath(path)
+    p = Path(path)
     if   p.islink():
         print("%s%s -> %s" % (prefix, p.name, p.read_link()), file=file)
     elif p.isdir():
