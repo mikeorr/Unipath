@@ -1,0 +1,109 @@
+os/os.path/shutil|Unipath|path.py|Notes
+os.path.abspath(p)|p.absolute()|p.abspath()|Return absolute path.
+os.path.basename(p)|p.name|p.name,
+os.path.commonprefix(p)|\-|\-|Common prefix. [1]_
+os.path.dirname(p)|p.parent|p.parent|All except the last component.
+os.path.exists(p)|fsp.exists()|p.exists()|Does the path exist?
+os.path.lexists(p)|fsp.lexists()|p.lexists()|Does the symbolic link exist?
+os.path.expanduser(p)|p.expand_user()|p.expanduser()|Expand "~" and "~user" prefix.
+os.path.expandvars(p)|p.expand_vars()|p.expandvars()|Expand "$VAR" environment variables.
+os.path.getatime(p)|fsp.atime()|p.atime|Last access time.
+os.path.getmtime(p)|fsp.mtime()|p.mtime|Last modify time.
+os.path.getctime(p)|fsp.ctime()|p.ctime|Platform-specific "ctime".
+os.path.getsize(p)|fsp.size()|p.size|File size.
+os.path.isabs(p)|p.isabsolute|p.isabs()|Is path absolute?
+os.path.isfile(p)|fsp.isfile()|p.isfile()|Is a file?
+os.path.isdir(p)|fsp.isdir()|p.isdir()|Is a directory?
+os.path.islink(p)|fsp.islink()|p.islink()|Is a symbolic link?
+os.path.ismount(p)|fsp.ismount()|p.ismount()|Is a mount point?
+os.path.join(p, "Q/R")|[FS]Path(p, "Q/R")|p.joinpath("Q/R") -or- p.child("Q", "R") |Join paths.
+os.path.normcase(p)|p.norm_case()|p.normcase()|Normalize case.
+os.path.normpath(p)|p.norm()|p.normpath()|Normalize path.
+os.path.realpath(p)|fsp.real_path()|p.realpath()|Real path without symbolic links.
+os.path.samefile(p, q)|fsp.same_file(q)|p.samefile(q)|True if both paths point to the same filesystem item.
+os.path.sameopenfile(d1, d2) \-|\-|[Not a path operation.]
+os.path.samestat(st1, st2)|\-|\-|[Not a path operation.]
+os.path.split(p)|(p.parent, p.name)|p.splitpath()|Split path at basename.
+os.path.splitdrive(p)|\-|p.splitdrive()|[2]_
+os.path.splitext(p)|\-|p.splitext()|[2]_
+os.path.splitunc(p)|\-|p.splitunc()|[2]_
+os.path.walk(p, func, args)|\-|\-|[3]_
+os.access(p, const)|\-|p.access(const)|[4]_
+os.chdir(d)|fsd.chdir()|\-|Change current directory.
+os.fchdir(fd)|\-|\-|[Not a path operation.]
+os.getcwd()|FSPath.cwd()|path.getcwd()|Get current directory.
+os.chroot(d)|\-|d.chroot()|[5]_
+os.chmod(p, 0644)|fsp.chmod(0644)|p.chmod(0644)|Change mode (permission bits).
+os.chown(p, uid, gid)|fsp.chown(uid, gid)|p.chown(uid, gid)|Change ownership.
+os.lchown(p, uid, gid)|\-|\-|[6]_
+os.link(src, dst)|fsp.hardlink(dst)|p.link(dst)|Make hard link.
+os.listdir(d)|fsd.listdir(names_only=True)|\-|List directory; return base filenames.
+os.lstat(p)|fsp.lstat()|p.lstat()|Like stat but don't follow symbolic link.
+os.mkfifo(p, 0666)|\-|\-|[Not enough of a path operation.]
+os.mknod(p, ...)|\-|\-|[Not enough of a path operation.]
+os.major(device)|\-|\-|[Not a path operation.]
+os.minor(device)|\-|\-|[Not a path operation.]
+os.makedev(...)|\-|\-|[Not a path operation.]
+os.mkdir(d, 0777)|fsd.mkdir(mode=0777)|d.mkdir(0777)|Create directory.
+os.makedirs(d, 0777)|fsd.mkdir(True, 0777)|d.makedirs(0777)|Create a directory and necessary parent directories.
+os.pathconf(p, name)|\-|p.pathconf(name)|Return Posix path attribute.|(What the hell is this?)
+os.readlink(l)|fsl.read_link()|l.readlink()|Return the path a symbolic link points to.
+os.remove(f)|fsf.remove()|f.remove()|Delete file.
+os.removedirs(d)|fsd.rmdir(True)|d.removedirs()|Remove empty directory and all its empty ancestors.
+os.rename(src, dst)|fsp.rename(dst)|p.rename(dst)|Rename a file or directory atomically (must be on same device).
+os.renames(src, dst)|fsp.rename(dst, True)|p.renames(dst)|Combines os.rename, os.makedirs, and os.removedirs.
+os.rmdir(d)|fsd.rmdir()|d.rmdir()|Delete empty directory.
+os.stat(p)|fsp.stat()|p.stat()|Return a "stat" object.
+os.statvfs(p)|fsp.statvfs()|p.statvfs()|Return a "statvfs" object.
+os.symlink(src, dst)|fsp.write_link(link_text)|p.symlink(dst)|Create a symbolic link.  ("write_link" argument order, is opposite from Python"s!),
+os.tempnam(...)|\-|\-|[7]_
+os.unlink(f)|\-|f.unlink()|Same as .remove().
+os.utime(p, times)|fsp.set_times(mtime, atime)|p.utime(times)|Set access/modification times.
+os.walk(...)|\-|[3]_|\-|-
+shutil.copyfile(src, dst)|fsf.copy(dst, ...)|f.copyfile(dst)|Copy file.|Unipath method is more than copyfile but less than copy2.
+shutil.copyfileobj(...)|\-|\-|[Not a path operation.]
+shutil.copymode(src, dst)|fsp.copy_stat(dst, ...)|p.copymode(dst)|Copy permission bits only.
+shutil.copystat(src, dst)|fsp.copy_stat(dst, ...)|p.copystat(dst)|Copy stat bits.
+shutil.copy(src, dst)|\-|f.copy(dst)|High-level copy a la Unix "cp".
+shutil.copy2(src, dst)|\-|f.copy2(dst)|High-level copy a la Unix "cp -p".
+shutil.copytree(...)|fsp.copy_tree(...)|d.copytree(...)|Copy directory tree.|(Not implemented in Unipath 0.1.0.)
+shutil.rmtree(...)|fsp.rmtree(...)|d.rmtree(...)|Recursively delete directory tree.|(Unipath has enhancements.)
+shutil.move(src, dst)|fsp.move(dst)|p.move(dst)|Recursively move a file or directory, using os.rename() if possible.
+A + B|A+B|A + B|Concatenate paths.
+os.path.join(A, B)|[FS]Path(A, B)|A / B|Join paths.
+|-or-,
+|p.child(B),
+\-|p.expand()|p.expand()|Combines expanduser, expandvars, normpath.
+os.path.dirname(p)|p.parent|p.parent|Path without final component.
+os.path.basename(p)|p.name|p.name|Final component only.
+[8]_|p.stem|p.namebase|Final component without extension.
+[9]_|p.ext|p.ext|Extension only.
+os.path.splitdrive(p)[0]|\-|p.drive|[2]_
+\-|\-|p.stripext()|Strip final extension.
+\-|\-|p.uncshare|[2]_
+\-|p.components()|p.splitall()|List of path components.|(Unipath has special first element.)
+\-|fsp.relative()|p.relpath()|Relative path to current directory.
+\-|fsp.rel_path_to(dst)|p.relpathto(dst)|Relative path to "dst".
+\-|fsd.listdir()|d.listdir()|List directory, return paths.
+\-|fsd.listdir(filter=FILES)|d.files()|List files in directory, return paths.
+\-|fsd.listdir(filter=DIRS)|d.dirs()|List subdirectories, return paths.
+\-|fsd.walk(...)|d.walk(...)|Recursively yield files and directories.
+\-|fsd.walk(filter=FILES)|d.walkfiles(...)|Recursively yield files.
+\-|fsd.walk(filter=DIRS)|d.walkdirs(...)|Recursively yield directories.
+\-|\-|p.fnmatch(pattern)|True if self.name matches glob pattern.
+\-|\-|p.glob(pattern)|Advanced globbing.
+\-|\-|f.open(mode)|Return open file object.
+\-|fsf.read_file("rb")|f.bytes()|Return file contents in binary mode.
+\-|fsf.write_file(content, "wb")|f.write_bytes()|Replace file contents in binary mode.
+\-|fsf.read_file()|f.text(...)|Return file content.|(Encoding args not implemented yet.)
+\-|fsf.write_file(content)|f.write_text(...)|Replace file content.|(Not all Orendorff args supported.)
+\-|\-|f.lines(...)|Return list of lines in file.
+\-|\-|f.write_lines(...)|Write list of lines to file.
+\-|\-|f.read_md5()|Calculate MD5 hash of file.
+\-|\-|p.owner|Advanded "get owner" operation.
+\-|\-|p.readlinkabs()|Return the path this symlink points to, converting to absolute path.
+\-|\-|p.startfile()|What the hell is this?
+\-|p.split_root()|\-|Unified "split root" method.
+\-|p.ancestor(N)|\-|Same as specifying .parent N times.
+\-|p.child(...)|\-|A "safe" way to join paths.
+\-|fsp.needs_update(...)|\-|True if self is missing or older than any of the other paths.

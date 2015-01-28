@@ -9,6 +9,11 @@ Comparision with os/os.path/shutil and path.py
 Functions are listed in the same order as the Python Library Reference, version
 2.5.  (Does not reflect later changes to Python or path.py.)
 
+.. csv-table:: Table title
+   :file: path_library_comparision.csv
+   :header-rows: 1
+   :delim: |
+
 ============================ =============================  =================== =====================================================================
 os/os.path/shutil            Unipath                        path.py             Notes
 ============================ =============================  =================== =====================================================================
