@@ -3,14 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.8.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
 <title>Unipath</title>
 <meta name="author" content="Mike Orr &lt;sluggoster&#64;gmail.com&gt;" />
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 7056 2011-06-17 10:50:48Z milde $
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
@@ -78,7 +78,7 @@ div.tip p.admonition-title {
 
 div.attention p.admonition-title, div.caution p.admonition-title,
 div.danger p.admonition-title, div.error p.admonition-title,
-div.warning p.admonition-title {
+div.warning p.admonition-title, .code .error {
   color: red ;
   font-weight: bold ;
   font-family: sans-serif }
@@ -250,9 +250,18 @@ pre.address {
   margin-top: 0 ;
   font: inherit }
 
-pre.literal-block, pre.doctest-block, pre.math {
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
   margin-left: 2em ;
   margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
 
 span.classifier {
   font-family: sans-serif ;
@@ -305,6 +314,21 @@ table.docutils th.field-name, table.docinfo th.docinfo-name {
   white-space: nowrap ;
   padding-left: 0 }
 
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
 h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
 h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
   font-size: 100% }
@@ -323,25 +347,33 @@ ul.auto-toc {
 <col class="docinfo-content" />
 <tbody valign="top">
 <tr><th class="docinfo-name">Version:</th>
-<td>1.0</td></tr>
+<td>1.1</td></tr>
 <tr class="field"><th class="docinfo-name">Home page:</th><td class="field-body"><a class="reference external" href="https://github.com/mikeorr/Unipath">https://github.com/mikeorr/Unipath</a></td>
 </tr>
 <tr class="field"><th class="docinfo-name">Docs:</th><td class="field-body"><a class="reference external" href="https://github.com/mikeorr/Unipath#readme">https://github.com/mikeorr/Unipath#readme</a></td>
 </tr>
 <tr><th class="docinfo-name">Author:</th>
 <td>Mike Orr &lt;<a class="reference external" href="mailto:sluggoster&#64;gmail.com">sluggoster&#64;gmail.com</a>&gt;</td></tr>
-<tr class="field"><th class="docinfo-name">License:</th><td class="field-body">Python (<a class="reference external" href="http://www.python.org/psf/license">http://www.python.org/psf/license</a>)</td>
-</tr>
-<tr class="field"><th class="docinfo-name">Based on:</th><td class="field-body">path.py by Jason Orendorff, as modified for PEP 335
-by Reinhold Birkenfeld and Björn Lindkvist. Influenced by
-Noam Raphael's AlternativePathModule</td>
-</tr>
-<tr class="field"><th class="docinfo-name">Contributors:</th><td class="field-body">Ricardo Duarte</td>
+<tr class="field"><th class="docinfo-name">License:</th><td class="field-body">MIT (<a class="reference external" href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a>)</td>
 </tr>
 </tbody>
 </table>
 <!-- To format this document as HTML:
 rst2html.py README.txt README.html -->
+<p><strong>Unipath</strong> is an object-oriented front end to the file/directory functions
+scattered throughout several Python library modules.  It's based on Jason
+Orendorff's <em>path.py</em> but focuses on user convenience rather than on strict
+adherence to the underlying functions' syntax.does not adhere as strictly to the
+underlying functions' syntax. Unipath is stable, well-tested, and has been used
+in production since 2008. It runs on Python 2.6+ and 3.2+.</p>
+<p><strong>Version 1.1</strong> is a bugfix release. It fixes a Unicode incompatibility on
+Python 3 under Windows. (Or more generally, on operating systems with native
+Unicode filenames.) The license is changed to MIT. It's as permissive as the
+former Python license but is smaller and simpler to read.</p>
+<p>Python 3.4 introduced another object-oriented path library, <tt class="docutils literal">pathlib</tt>. It's
+available on PyPI as <tt class="docutils literal">pathlib2</tt> for older versions of Python. (<tt class="docutils literal">pathlib</tt> on
+PyPI is a frozen earlier version.) Unipath is now in maintenance mode.  The
+author is exploring a subclass of pathlib(2) adding some of Unipath's features.</p>
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
@@ -378,19 +410,6 @@ rst2html.py README.txt README.html -->
 </div>
 <div class="section" id="introduction">
 <h1><a class="toc-backref" href="#id11">Introduction</a></h1>
-<p>Unipath is an object-oriented front end to the file/directory functions
-scattered throughout several Python library modules.  It's based on Jason
-Orendorff's <em>path.py</em> but does not adhere as strictly to the underlying
-functions' syntax, in order to provide more user convenience and higher-level
-functionality. Unipath is stable, well-tested, and has been used in production
-since 2008.</p>
-<p>Version 1.0 runs on Python 2.6, 2.7, 3.2, and 3.3. Older Python versions should
-stick to Unipath 0.2.</p>
-<p>Users may also want to consider 'pathlib' (PEP 428), a more recent path library
-which is being considered for inclusion in Python 3.4. It has a more modern
-API, and I'm evaluating it as a potential successor to Unipath.  However, as of
-March 2013 pathlib's API is still in flux, it has not been widely tested yet,
-and it has fewer features than Unipath.</p>
 <p>The <tt class="docutils literal">Path</tt> class encapsulates the file/directory operations in Python's
 <tt class="docutils literal">os</tt>, <tt class="docutils literal">os.path</tt>, and <tt class="docutils literal">shutil</tt> modules. (Non-filesystem operations are in
 the <tt class="docutils literal">AbstractPath</tt> superclass, but users can ignore this.)</p>

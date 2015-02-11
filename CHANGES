@@ -1,4 +1,4 @@
-1.1 (unreleased)
+1.1 (2015-02-10)
 ----------------
 * Fix unicode NameError on Python 3. (Appeared only on OSes with unicode
   paths.)(Thanks to Hanlle Nicolas, Aaron Lelevier, Dmitry Dygalo.)
@@ -6,6 +6,8 @@
 * Fix ``walk`` error in arg ``top_down``. (Gabriel Reyla == sesas)
 * Fix ``isdir()`` issue on Windows. (Gabriel Reyla)
 * Fix ``needs_update`` with string argument. (#15)
+* Change license to MIT. It's at least as free as the Python license but
+  doesn't contain irrelevant Python-specific language.
 
 1.0 (2013-04-05)
 ------------------

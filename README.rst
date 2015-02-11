@@ -4,40 +4,37 @@ Unipath
 An object-oriented approach to file/directory operations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:Version:           1.0
+:Version:           1.1
 :Home page:         https://github.com/mikeorr/Unipath
 :Docs:              https://github.com/mikeorr/Unipath#readme
 :Author:            Mike Orr <sluggoster@gmail.com>
-:License:           Python (http://www.python.org/psf/license)
-:Based on:          path.py by Jason Orendorff, as modified for PEP 335
-                    by Reinhold Birkenfeld and Björn Lindkvist. Influenced by
-                    Noam Raphael's AlternativePathModule
-:Contributors:      Ricardo Duarte
+:License:           MIT (http://opensource.org/licenses/MIT)
 
 ..
     To format this document as HTML:
     rst2html.py README.txt README.html
 
+**Unipath** is an object-oriented front end to the file/directory functions
+scattered throughout several Python library modules.  It's based on Jason
+Orendorff's *path.py* but focuses more on user convenience rather than on strict
+adherence to the underlying functions' syntax.does not adhere as strictly to the
+underlying functions' syntax. Unipath is stable, well-tested, and has been used
+in production since 2008. It runs on Python 2.6+ and 3.2+.
+
+**Version 1.1** is a bugfix release. It fixes a Unicode incompatibility on
+Python 3 under Windows (or operating systems with native unicode filenames). The
+license is changed to MIT. It's as permissive as the former Python license but
+is smaller and simpler to read.
+
+Python 3.4 introduced another object-oriented path library, ``pathlib``. It's
+available on PyPI as ``pathlib2`` for older versions of Python. (``pathlib`` on
+PyPI is a frozen earlier version.) Unipath is now in maintenance mode.  The
+author is exploring a subclass of pathlib(2) adding some of Unipath's features.
+
 .. contents::
 
 Introduction
 ============
-
-Unipath is an object-oriented front end to the file/directory functions
-scattered throughout several Python library modules.  It's based on Jason
-Orendorff's *path.py* but does not adhere as strictly to the underlying
-functions' syntax, in order to provide more user convenience and higher-level
-functionality. Unipath is stable, well-tested, and has been used in production
-since 2008.
-
-Version 1.0 runs on Python 2.6, 2.7, 3.2, and 3.3. Older Python versions should
-stick to Unipath 0.2.
-
-Users may also want to consider 'pathlib' (PEP 428), a more recent path library
-which is being considered for inclusion in Python 3.4. It has a more modern
-API, and I'm evaluating it as a potential successor to Unipath.  However, as of
-March 2013 pathlib's API is still in flux, it has not been widely tested yet,
-and it has fewer features than Unipath.
 
 The ``Path`` class encapsulates the file/directory operations in Python's
 ``os``, ``os.path``, and ``shutil`` modules. (Non-filesystem operations are in
