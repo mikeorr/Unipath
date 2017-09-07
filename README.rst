@@ -122,7 +122,7 @@ Constructor
 ``Path`` (and ``AbstractPath``) objects can be created from a string path, or
 from several string arguments which are joined together a la ``os.path.join``.
 Each argument can be a string, an ``(Abstract)Path`` instance, an int or long,
-or a list/tuple of strings to be joined::
+a list/tuple of strings to be joined, or (Python 3.6+) a ``PathLike`` object::
 
     p = Path("foo/bar.py")       # A relative path
     p = Path("foo", "bar.py")    # Same as previous

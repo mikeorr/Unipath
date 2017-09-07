@@ -25,6 +25,12 @@ try:
 except NameError:  # Python 3 doesn't have basestring nor long
     legal_arg_types = (str, list, int)
 
+try:
+    from os import PathLike
+    legal_arg_types += (PathLike,)
+except ImportError:
+    pass
+
 class AbstractPath(_base):
     """An object-oriented approach to os.path functions."""
     pathlib = os.path
@@ -54,6 +60,9 @@ class AbstractPath(_base):
         if resultStr is NotImplemented:
             return resultStr
         return self.__class__(resultStr)
+
+    def __fspath__(self):
+        return _base(self)
  
     @classmethod
     def _new_helper(class_, args):
