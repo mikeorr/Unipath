@@ -77,7 +77,7 @@ class AbstractPath(_base):
         args = list(args)
         for i, arg in enumerate(args):
             if not isinstance(arg, (AbstractPath,) + legal_arg_types):
-                m = "arguments must be str, unicode, list, int, long, or %s"
+                m = "arguments must be str, unicode, list, int, long, os.PathLike, or %s"
                 raise TypeError(m % class_.__name__)
             if isinstance(arg, int_types):
                 args[i] = str(arg)
