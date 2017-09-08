@@ -622,5 +622,29 @@ class TestHighLevel(FilesystemTest):
     # .write_file and .rmtree tested in .setUp.
 
 
+try:
+    from os import PathLike as _
+    pep519_present = True
+except ImportError:
+    pep519_present = False
 
-        
+
+@pytest.mark.skipif(not pep519_present, reason='PEP519 support not found')
+class TestPEP519(FilesystemTest):
+    # If PEP519 support is not present then interactions with other path-like objects are left undefined (will probably fail)
+
+    def test_pathlib(self):
+        import pathlib
+        pure_path = Path('a', 'b', Path('c'), Path('d'))
+        mixed_path = Path('a', pathlib.Path('b'), 'c', pathlib.Path('d'))
+        assert pure_path == mixed_path
+
+    def test_DirEntry(self):
+        d = self.d
+        with os.scandir(self.d) as it:
+            for entry in it:
+                pure_path = Path(self.d, entry.name, '..').resolve()
+                mixed_path = Path(entry, '..').resolve()
+                assert pure_path == mixed_path
+                return
+        assert False, "scandir() yielded an empty directory"
