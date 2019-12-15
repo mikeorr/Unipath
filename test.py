@@ -8,7 +8,7 @@ Environment variables:
 with unittest's.)
 
 IMPORTANT: Tests may not assume what the current directory is because the tests
-may have been started from anywhere, and some tests chdir to the temprorary
+may have been started from anywhere, and some tests chdir to the temporary
 test directory which is then deleted.
 """
 from __future__ import print_function
