@@ -280,9 +280,9 @@ class Path(AbstractPath):
 
     def copy_stat(self, dst, times=True, perms=True):
         st = os.stat(self)
-        if hasattr(os, 'utime'):
+        if times and hasattr(os, 'utime'):
             os.utime(dst, (st.st_atime, st.st_mtime))
-        if hasattr(os, 'chmod'):
+        if perms and hasattr(os, 'chmod'):
             m = stat.S_IMODE(st.st_mode)
             os.chmod(dst, m)
 
