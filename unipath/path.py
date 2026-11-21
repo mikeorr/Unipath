@@ -267,13 +267,14 @@ class Path(AbstractPath):
     def copy(self, dst, times=False, perms=False):
         """Copy the file, optionally copying the permission bits (mode) and
            last access/modify time. If the destination file exists, it will be
-           replaced. Raises OSError if the destination is a directory. If the
-           platform does not have the ability to set the permission or times,
-           ignore it.
+           replaced. If the destination is an existing directory, copy the
+           file into it using the source filename. If the platform does not
+           have the ability to set the permission or times, ignore it.
            This is shutil.copyfile plus bits of shutil.copymode and
            shutil.copystat's implementation.
-           shutil.copy and shutil.copy2 are not supported but are easy to do.
         """
+        if os.path.isdir(dst):
+            dst = self.__class__(dst, self.name)
         shutil.copyfile(self, dst)
         if times or perms:
             self.copy_stat(dst, times, perms)

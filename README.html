@@ -787,8 +787,9 @@ or is a even a valid path for the filesystem.</dd>
 <h2><a class="toc-backref" href="#id27">High-level operations</a></h2>
 <dl class="docutils">
 <dt>.copy(dst, times=False, perms=False)</dt>
-<dd>Copy the file to a destination.  'times' and 'perms' are same as for
-<tt class="docutils literal">.copy_stat()</tt>.</dd>
+<dd>Copy the file to a destination.  If 'dst' is an existing directory,
+copy into it using the source filename.  An existing destination file
+is replaced.  'times' and 'perms' are same as for <tt class="docutils literal">.copy_stat()</tt>.</dd>
 <dt>.copy_stat(dst, times=True, perms=True)</dt>
 <dd>Copy the access/modification times and/or the permission bits from this
 path to another path.</dd>

@@ -451,8 +451,9 @@ Symbolic and hard links
 High-level operations
 ---------------------
 .copy(dst, times=False, perms=False)
-    Copy the file to a destination.  'times' and 'perms' are same as for
-    ``.copy_stat()``.
+    Copy the file to a destination.  If 'dst' is an existing directory,
+    copy into it using the source filename.  An existing destination file
+    is replaced.  'times' and 'perms' are same as for ``.copy_stat()``.
 
 .copy_stat(dst, times=True, perms=True)
     Copy the access/modification times and/or the permission bits from this
