@@ -305,7 +305,15 @@ Calculating paths
 
 .rel_path_to(other)
     Return a path from self to other.  In other words, return a path for
-    'other' relative to self.
+    'other' relative to self if self is an existing directory, or relative
+    to self's parent otherwise.  Files and nonexistent paths both use their
+    parent as the starting point.  The destination does not need to exist.
+
+    For example, on POSIX, ``Path('/a/b').rel_path_to('/a/b/c/d')`` returns
+    ``Path('c/d')`` if ``/a/b`` is an existing directory, but ``Path('b/c/d')``
+    if ``/a/b`` does not exist.  For a purely lexical calculation that treats
+    self as a directory regardless of whether it exists, use
+    ``os.path.relpath(other, self)``.
 
 Listing directories
 -------------------
@@ -554,7 +562,7 @@ Functions are listed in the same order as the Python Library Reference, version
                                               p.child("Q", "R")
     os.path.normcase(p)    p.normcase()    p.norm_case()   Normalize case.
     os.path.normpath(p)    p.normpath()    p.norm()        Normalize path.
-    os.path.realpath(p)    p.realpath()    fsp.real_path() Real path without symbolic links.
+    os.path.realpath(p)    p.realpath()    fsp.resolve()   Real path without symbolic links.
     os.path.samefile(p, q) p.samefile(q)   fsp.same_file(q)  True if both paths point to the same filesystem item.
     os.path.sameopenfile(d1, d2)  -          -               [Not a path operation.]
     os.path.samestat(st1, st2)    -          -               [Not a path operation.]

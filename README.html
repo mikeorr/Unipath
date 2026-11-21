@@ -659,8 +659,15 @@ prefixes the current directory; i.e., <tt class="docutils literal"><span class="
 This may return a path prefixed with many &quot;../..&quot;.  If the path is on a
 different drive, this returns the original path unchanged.</dd>
 <dt>.rel_path_to(other)</dt>
-<dd>Return a path from self to other.  In other words, return a path for
-'other' relative to self.</dd>
+<dd><p class="first">Return a path from self to other.  In other words, return a path for
+'other' relative to self if self is an existing directory, or relative
+to self's parent otherwise.  Files and nonexistent paths both use their
+parent as the starting point.  The destination does not need to exist.</p>
+<p class="last">For example, on POSIX, <tt class="docutils literal">Path('/a/b').rel_path_to('/a/b/c/d')</tt> returns
+<tt class="docutils literal">Path('c/d')</tt> if <tt class="docutils literal">/a/b</tt> is an existing directory, but <tt class="docutils literal">Path('b/c/d')</tt>
+if <tt class="docutils literal">/a/b</tt> does not exist.  For a purely lexical calculation that treats
+self as a directory regardless of whether it exists, use
+<tt class="docutils literal">os.path.relpath(other, self)</tt>.</p></dd>
 </dl>
 </div>
 <div class="section" id="listing-directories">
@@ -880,7 +887,7 @@ os.path.join(p, &quot;Q/R&quot;) p.joinpath(&quot;Q/R&quot;)  [FS]Path(p, &quot;
                                           p.child(&quot;Q&quot;, &quot;R&quot;)
 os.path.normcase(p)    p.normcase()    p.norm_case()   Normalize case.
 os.path.normpath(p)    p.normpath()    p.norm()        Normalize path.
-os.path.realpath(p)    p.realpath()    fsp.real_path() Real path without symbolic links.
+os.path.realpath(p)    p.realpath()    fsp.resolve()   Real path without symbolic links.
 os.path.samefile(p, q) p.samefile(q)   fsp.same_file(q)  True if both paths point to the same filesystem item.
 os.path.sameopenfile(d1, d2)  -          -               [Not a path operation.]
 os.path.samestat(st1, st2)    -          -               [Not a path operation.]
