@@ -66,8 +66,14 @@ class Path(AbstractPath):
     def rel_path_to(self, dst):
         """ Return a relative path from self to dst.
 
+        If self is an existing directory, use it as the starting point.
+        Otherwise, including when self does not exist, use its parent.
+        The destination does not need to exist. For a purely lexical
+        calculation that always treats self as a directory, use
+        os.path.relpath(dst, self).
+
         This prefixes as many pardirs (``..``) as necessary to reach a common
-        ancestor.  If there's no common ancestor (e.g., they're are on 
+        ancestor.  If there's no common ancestor (e.g., they are on
         different Windows drives), the path will be absolute.
         """
         origin = self.__class__(self).absolute()
