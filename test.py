@@ -580,6 +580,53 @@ class TestLinks(FilesystemTest):
     def test_read_link(self):
         assert self.dead_link.read_link() == "nowhere"
 
+class TestCopy(object):
+    @pytest.mark.parametrize('as_string', [False, True])
+    @pytest.mark.parametrize('overwrite', [False, True])
+    def test_copy_to_directory(self, tmpdir, as_string, overwrite):
+        source = tmpdir.join('source.txt')
+        source.write('source contents')
+        directory = tmpdir.mkdir('destination')
+        target = directory.join(source.basename)
+        if overwrite:
+            target.write('old contents')
+        destination = str(directory) if as_string else Path(str(directory))
+
+        assert Path(str(source)).copy(destination) is None
+
+        assert target.read() == 'source contents'
+        assert source.read() == 'source contents'
+
+    def test_copy_to_directory_with_metadata(self, tmpdir):
+        source = tmpdir.join('source.txt')
+        source.write('source contents')
+        os.utime(str(source), (50000, 60000))
+        directory = tmpdir.mkdir('destination')
+
+        Path(str(source)).copy(str(directory), times=True, perms=True)
+
+        target = directory.join(source.basename)
+        assert target.read() == 'source contents'
+        assert os.path.getmtime(str(target)) == 60000
+        assert os.path.getmtime(str(directory)) != 60000
+
+    def test_copy_to_file(self, tmpdir):
+        source = tmpdir.join('source.txt')
+        source.write('source contents')
+        target = tmpdir.join('different-name.txt')
+        target.write('old contents')
+
+        assert Path(str(source)).copy(str(target)) is None
+
+        assert target.read() == 'source contents'
+
+    def test_copy_to_missing_parent(self, tmpdir):
+        source = tmpdir.join('source.txt')
+        source.write('source contents')
+        with pytest.raises(IOError):
+            Path(str(source)).copy(str(tmpdir.join('missing', 'target.txt')))
+
+
 class TestHighLevel(FilesystemTest):
     def test_copy(self):
         a_file = self.a_file
